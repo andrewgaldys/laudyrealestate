@@ -1,89 +1,242 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laudy Real Estate | South Florida</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nick Napoli | Fort Lauderdale Waterfront &amp; Luxury Real Estate</title>
+  <meta name="description" content="Fort Lauderdale waterfront homes, distinctive neighborhoods and investment opportunities, with practical local guides from Nick Napoli of Fidelity Real Estate.">
+  <!-- Before launch: replace https://www.example.com with the final domain on every page (see README). -->
+  <link rel="canonical" href="https://www.example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nick Napoli">
+  <meta property="og:title" content="Nick Napoli | Fort Lauderdale Waterfront &amp; Luxury Real Estate">
+  <meta property="og:description" content="Practical local guides to Fort Lauderdale waterfront homes, neighborhoods and investment opportunities.">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1766373165231-8807829cd12b?w=1200&amp;h=630&amp;fit=crop&amp;fm=jpg&amp;q=75">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#102d42">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/charter-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.example.com/#website",
+        "url": "https://www.example.com/",
+        "name": "Nick Napoli",
+        "description": "Fort Lauderdale real estate, considered in detail.",
+        "publisher": { "@id": "https://www.example.com/#nick" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.example.com/#nick",
+        "name": "Nick Napoli",
+        "url": "https://www.example.com/about/",
+        "worksFor": { "@id": "https://www.example.com/#brokerage" },
+        "areaServed": [
+          { "@type": "City", "name": "Fort Lauderdale", "containedInPlace": { "@type": "State", "name": "Florida" } },
+          { "@type": "Place", "name": "South Florida" }
+        ],
+        "knowsAbout": [
+          "Fort Lauderdale waterfront homes",
+          "Las Olas Isles and central Fort Lauderdale neighborhoods",
+          "Pompano Beach oceanfront condominiums",
+          "Relocation and property evaluation",
+          "Investment and development opportunities"
+        ],
+        "sameAs": ["https://www.instagram.com/INSTAGRAM_HANDLE/"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.example.com/#brokerage",
+        "name": "Fidelity Real Estate"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.example.com/#webpage",
+        "url": "https://www.example.com/",
+        "name": "Nick Napoli | Fort Lauderdale Waterfront & Luxury Real Estate",
+        "description": "Fort Lauderdale waterfront homes, distinctive neighborhoods and investment opportunities, with practical local guides from Nick Napoli of Fidelity Real Estate.",
+        "isPartOf": { "@id": "https://www.example.com/#website" },
+        "about": { "@id": "https://www.example.com/#nick" },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-50 top-0">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-slate-800 tracking-tight">LAUDY <span class="font-light text-slate-500">Real Estate</span></a>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#services" class="text-gray-600 hover:text-slate-900 transition">Expertise</a>
-                <a href="#properties" class="text-gray-600 hover:text-slate-900 transition">Properties</a>
-                <a href="#contact" class="text-gray-600 hover:text-slate-900 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="./">Nick Napoli</a>
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a href="./" aria-current="page">Home</a></li>
+          <li><a href="waterfront/">Waterfront</a></li>
+          <li><a href="neighborhoods/">Neighborhoods</a></li>
+          <li><a href="about/">About Nick</a></li>
+        </ul>
+      </nav>
+      <a class="button header-cta" href="#contact">Contact Nick</a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <header class="relative mt-16 bg-slate-900 h-[80vh] flex items-center justify-center text-center">
-        <!-- Placeholder background image from Unsplash -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="relative z-10 px-4 max-w-3xl">
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">South Florida Real Estate, Elevated.</h1>
-            <p class="text-xl text-gray-200 mb-10">Data-driven market strategies, commercial investment analysis, and premium property marketing.</p>
-            <a href="#contact" class="bg-white text-slate-900 px-8 py-4 rounded shadow-lg font-semibold hover:bg-gray-100 transition duration-300">Start the Conversation</a>
+  <main id="main">
+    <div class="wrap opening opening--split">
+      <div>
+        <p class="label">Fort Lauderdale · South Florida</p>
+        <h1>Know the market.<br> See the details.</h1>
+      </div>
+      <div>
+        <p class="intro">Waterfront homes, distinctive neighborhoods and investment opportunities deserve more than a generic search. Explore practical local guides, then bring your specific brief.</p>
+        <div class="actions">
+          <a class="button" href="#contact">Discuss your search</a>
+          <a class="more" href="waterfront/">Explore waterfront guidance</a>
         </div>
-    </header>
+      </div>
+    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 max-w-6xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-800 mb-4">Specialized Services</h2>
-            <div class="w-24 h-1 bg-slate-800 mx-auto"></div>
+    <figure class="photo wrap">
+      <img
+        src="https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=1600&amp;q=70"
+        srcset="https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=640&amp;q=70 640w,
+                https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=960&amp;q=70 960w,
+                https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=1280&amp;q=70 1280w,
+                https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=1600&amp;q=70 1600w,
+                https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=2000&amp;q=70 2000w,
+                https://images.unsplash.com/photo-1766373165231-8807829cd12b?auto=format&amp;w=2400&amp;q=70 2400w"
+        sizes="(min-width: 76rem) 76rem, 100vw"
+        width="1600" height="900"
+        alt="Aerial view of the downtown Fort Lauderdale skyline above a canal lined with boats."
+        fetchpriority="high">
+      <figcaption>
+        <span>Downtown Fort Lauderdale from the air.</span>
+        <span>Photograph: <a href="https://unsplash.com/photos/city-skyline-over-a-canal-with-boats-and-boats-lj4KbgcOkWY">MARTLEY U / Unsplash</a></span>
+      </figcaption>
+    </figure>
+
+    <section class="section" aria-labelledby="decision-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">Start with the decision</p>
+            <h2 id="decision-title">Good real estate advice begins with the right questions.</h2>
+          </div>
+          <p class="standfirst">Fort Lauderdale rewards careful attention to the details that listings compress into a few lines. These guides are built around the tradeoffs buyers and sellers actually face.</p>
         </div>
-        
-        <div class="grid md:grid-cols-3 gap-10">
-            <!-- Service 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Buyer & Seller Representation</h3>
-                <p class="text-gray-600 leading-relaxed">Navigating the competitive Fort Lauderdale and South Florida markets to secure optimal value for primary residences and vacation properties.</p>
-            </div>
-            <!-- Service 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Commercial & Multifamily</h3>
-                <p class="text-gray-600 leading-relaxed">Comprehensive financial modeling, pro forma analysis, and underwriting for value-add assets and investment portfolios.</p>
-            </div>
-            <!-- Service 3 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Aerial Property Imaging</h3>
-                <p class="text-gray-600 leading-relaxed">Showcase listings from breathtaking perspectives utilizing FAA-certified commercial drone photography and videography.</p>
-            </div>
-        </div>
+
+        <ul class="guide-list" role="list">
+          <li class="guide">
+            <p class="kicker">Waterfront guide</p>
+            <h3>What is the water access really worth?</h3>
+            <p>Frontage, bridges, dock configuration, seawall condition and the path to the inlet can change the entire comparison.</p>
+            <a class="more" href="waterfront/">Read the guide<span class="vh"> to evaluating waterfront property</span></a>
+          </li>
+          <li class="guide">
+            <p class="kicker">Neighborhood guide</p>
+            <h3>Find the neighborhood that fits.</h3>
+            <p>Compare Las Olas Isles, Colee Hammock, Victoria Park and Pompano Beach by how you intend to live.</p>
+            <a class="more" href="neighborhoods/">Compare areas<span class="vh"> in the neighborhood guide</span></a>
+          </li>
+          <li class="guide">
+            <p class="kicker">About Nick</p>
+            <h3>Bring a specific brief.</h3>
+            <p>A boat, a renovation budget, a relocation timeline or a target street: the more precise the brief, the more useful the search.</p>
+            <a class="more" href="about/">Meet Nick</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Placeholder for Future Listings -->
-    <section id="properties" class="py-24 bg-slate-100">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-slate-800 mb-4">Featured Properties</h2>
-            <p class="text-gray-600 mb-12">Exclusive off-market deals and active listings coming soon.</p>
-            <!-- You can add property cards here later -->
+    <section class="section section--rule" aria-labelledby="lens-title">
+      <div class="wrap lens">
+        <div class="lens-text">
+          <p class="label">The Fort Lauderdale lens</p>
+          <h2 id="lens-title">Two homes can be close on a map and far apart in utility.</h2>
+          <p>A waterfront address alone does not describe how a property works for a boat owner. A price per square foot alone does not capture lot geometry, renovation scope or the market for replacement homes. I start with the use case, then test each comparable sale against it.</p>
+          <a class="more" href="waterfront/#checks">See the waterfront framework</a>
         </div>
+
+        <figure class="diagram">
+          <div class="map">
+            <img src="assets/img/canal-plan.svg" width="640" height="440" loading="lazy"
+                 alt="Plan of two canal homes, A and B, facing each other across a street. A’s canal leads straight to the channel and the inlet; B’s canal passes under a fixed bridge first.">
+            <div aria-hidden="true">
+              <span class="map-label map-label--home" style="left: 39.06%; top: 36.36%">A</span>
+              <span class="map-label map-label--home" style="left: 39.06%; top: 52.27%">B</span>
+              <span class="map-label map-label--note" style="left: 60%; top: 69.09%">Fixed bridge</span>
+              <span class="map-label" style="left: 80.47%; top: 86.59%">Inlet</span>
+              <span class="map-label" style="left: 92.19%; top: 9.09%">Open<br>water</span>
+            </div>
+          </div>
+          <figcaption>Homes A and B face each other across a street. Only A reaches open water without passing under a fixed bridge. <em>Illustration, not to scale.</em></figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Contact Footer -->
-    <footer id="contact" class="bg-slate-900 text-white py-16">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to make a move?</h2>
-            <p class="text-gray-400 mb-10 text-lg">Whether you are looking to acquire a new asset or market a current property, let's build a strategy that works.</p>
-            
-            <div class="mb-10">
-                <p class="text-xl font-semibold text-white">Andrew Galdys</p>
-                <p class="text-gray-400 mt-1">Licensed Real Estate Sales Associate</p>
-                <p class="text-gray-500 text-sm mt-1">Fidelity Real Estate LLC</p>
-            </div>
-
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:info@laudyrealestate.com" class="text-blue-400 hover:text-blue-300 transition">info@laudyrealestate.com</a>
-            </div>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <h2 id="contact-title">Tell me what you are trying to accomplish.</h2>
+        <div>
+          <p class="contact-body">Buying, selling, relocating or evaluating a development opportunity? Send a property address or a concise brief and I can help frame the next steps.</p>
+          <!-- Contact: interim Instagram link. Replace or add the approved phone, email or lead form here (see README). -->
+          <a class="button" href="https://www.instagram.com/INSTAGRAM_HANDLE/" target="_blank" rel="noopener">Message Nick on Instagram<span class="vh"> (opens in a new tab)</span></a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-tagline">Fort Lauderdale real estate, considered in detail.</p>
+          <p class="footer-name">Nick Napoli · Fidelity Real Estate</p>
+          <p class="footer-note">For a property specific opinion, send the address and your priorities.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Pages</h2>
+          <ul class="footer-links">
+            <li><a href="./">Home</a></li>
+            <li><a href="waterfront/">Waterfront guide</a></li>
+            <li><a href="neighborhoods/">Neighborhood guide</a></li>
+            <li><a href="about/">About Nick</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Contact</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/INSTAGRAM_HANDLE/" target="_blank" rel="noopener">Instagram<span class="vh"> (opens in a new tab)</span></a></li>
+            <!-- When approved, add: <li><a href="tel:+10000000000">(000) 000-0000</a></li> -->
+            <!-- When approved, add: <li><a href="mailto:name@example.com">name@example.com</a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p class="eho">Equal Housing Opportunity</p>
+        <p>Guides on this site are general information, not an appraisal, survey or inspection. Verify property-specific details independently before relying on them.</p>
+        <p>© 2026 Nick Napoli</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Opened straight from disk? Point folder links at their index.html so the preview still works.
+    if (location.protocol === "file:") {
+      document.querySelectorAll("a[href]").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (/^[a-z]+:/i.test(href) || href.charAt(0) === "#") return;
+        a.setAttribute("href", href.replace(/\/(#.*)?$/, "/index.html$1"));
+      });
+    }
+  </script>
 </body>
 </html>
