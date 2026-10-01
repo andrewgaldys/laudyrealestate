@@ -24,7 +24,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Inter:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -34,7 +34,7 @@
       {
         "@type": "Article",
         "@id": "https://www.yourdomain.com/neighborhoods.html#article",
-        "headline": "Five Fort Lauderdale Neighborhoods, Compared for Luxury Buyers",
+        "headline": "Fort Lauderdale Luxury Neighborhoods, Compared",
         "description": "Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista and Victoria Park compared on walkability, dockage availability and lot size.",
         "image": "https://www.yourdomain.com/images/neighborhoods-hero-drone.jpg",
         "datePublished": "2026-09-30",
@@ -65,7 +65,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header glass-nav">
+  <header class="site-header">
     <div class="container site-header__inner">
       <a class="wordmark" href="./">
         <span class="wordmark__name">Nick Napoli</span>
@@ -79,34 +79,39 @@
           <li><a href="about.html">About Nick</a></li>
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm site-header__cta" href="#contact">Contact Nick</a>
+      <a class="btn btn--sm site-header__cta" href="#contact">Contact Nick</a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
 
-    <!-- HERO: REPLACE images/neighborhoods-hero-drone.jpg with a 2400×1100 drone still (keep the file name). -->
+    <!-- HERO: full-viewport background.
+         REPLACE images/neighborhoods-hero-drone.jpg with a dark-toned 2400×1100 drone still (keep the file name).
+         For video, add a <video class="hero__media"> after the <img>, as shown in index.html. -->
     <section class="hero hero--page" aria-labelledby="page-title">
       <img class="hero__media"
            src="images/neighborhoods-hero-drone.jpg"
            alt="Aerial drone view looking east over Fort Lauderdale's waterfront neighborhoods, the Intracoastal Waterway and the Atlantic Ocean"
            width="2400" height="1100" fetchpriority="high" decoding="async">
-      <div class="container">
-        <div class="hero__panel glass-panel glass-panel--dark">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-              <li><a href="./">Home</a></li>
-              <li aria-current="page">Neighborhood comparison</li>
-            </ol>
-          </nav>
-          <h1 id="page-title">Five Fort Lauderdale Neighborhoods, Compared for Luxury Buyers</h1>
-          <p class="lede">Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista and Victoria Park sit within a short drive of each other, yet they serve very different buyers. This comparison is organized around the three questions luxury buyers ask first: can I walk to anything, can I keep my boat here, and how much land do I get?</p>
-          <p class="byline">
-            <span>By <a href="about.html">Nick Napoli</a></span>
-            <span>Last reviewed <time datetime="2026-09-30">September 30, 2026</time></span>
-          </p>
-        </div>
+      <div class="container hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="./">Home</a></li>
+            <li aria-current="page">Neighborhood comparison</li>
+          </ol>
+        </nav>
+        <h1 id="page-title">Fort Lauderdale Luxury Neighborhoods, Compared</h1>
+        <span class="hero__rule" aria-hidden="true"></span>
+        <p class="lede">Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista and Victoria Park sit within a short drive of each other, yet they serve very different buyers. This comparison is organized around the three questions luxury buyers ask first: can I walk to anything, can I keep my boat here, and how much land do I get?</p>
+        <p class="byline">
+          <span>By <a href="about.html">Nick Napoli</a></span>
+          <span>Last reviewed <time datetime="2026-09-30">September 30, 2026</time></span>
+        </p>
+        <ul class="btn-row">
+          <li><a class="btn" href="#contact">Send a search brief</a></li>
+        </ul>
       </div>
+      <a class="hero__scroll" href="#method">Explore</a>
     </section>
 
     <!-- METHOD -->
@@ -428,8 +433,8 @@
           <h2 id="contact-title">Send Nick a search brief</h2>
           <p>Tell Nick which of these neighborhoods you're weighing, or simply how you want to live: on foot, on the water or behind a gate. Include budget, must-haves and timing, and the first reply will narrow the map.</p>
           <ul class="btn-row">
-            <li><a class="btn btn--light" href="tel:+19545550100">Call (954) 555-0100</a></li>
-            <li><a class="btn btn--ghost-light" href="mailto:nick@yourdomain.com">Email Nick</a></li>
+            <li><a class="btn" href="tel:+19545550100">Call (954) 555-0100</a></li>
+            <li><a class="btn" href="mailto:nick@yourdomain.com">Email Nick</a></li>
           </ul>
           <p class="note"><a href="about.html#contact">See exactly what to include, or use the contact form</a></p>
         </div>
@@ -438,22 +443,22 @@
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A search brief</h3>
             <p>Neighborhoods or lifestyle, budget range, must-haves, deal-breakers and timing.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>Your boat's dimensions</h3>
             <p>Length overall, beam, loaded draft and air draft, plus how you use the boat and the life you want on land.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A property address</h3>
             <p>Found a home in one of these neighborhoods? Send the address and your timeline.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A sale objective</h3>
             <p>Selling in one of these neighborhoods? Send the address, what matters most and your timing.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective&nbsp;<span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
