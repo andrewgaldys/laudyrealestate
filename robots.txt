@@ -1,37 +1,41 @@
 # robots.txt for https://www.yourdomain.com
-# Every crawler, search engines and AI systems alike, may crawl the entire site.
-# Named groups below make the policy explicit for the major search and AI crawlers.
+# Every page on this site may be crawled by search engines and AI systems.
 
+# --- Default: all crawlers -------------------------------------------------
 User-agent: *
 Allow: /
 
-# Search engines
+# --- Search engines --------------------------------------------------------
 User-agent: Googlebot
+User-agent: Googlebot-Image
 User-agent: Bingbot
 User-agent: DuckDuckBot
 User-agent: Applebot
+User-agent: Slurp
+User-agent: YandexBot
 Allow: /
 
-# AI search and answer engines (index and fetch pages for cited answers)
+# --- AI search and answer engines (fetch pages to cite them in answers) ----
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
-User-agent: Claude-SearchBot
-User-agent: Claude-User
 User-agent: PerplexityBot
 User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: DuckAssistBot
 User-agent: MistralAI-User
 Allow: /
 
-# AI model-training crawlers and control tokens
-# Allowed by current policy. To stay visible in AI search while opting out of
-# model training, change "Allow: /" to "Disallow: /" for this group only.
+# --- AI model training crawlers and opt-in tokens ---------------------------
+# To keep AI search visibility but opt out of model training, change
+# "Allow: /" to "Disallow: /" in this group. (Deleting the group would not
+# block these bots: they would fall back to the "*" group above.)
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: Google-Extended
 User-agent: Applebot-Extended
-User-agent: Meta-ExternalAgent
 User-agent: Amazonbot
+User-agent: Meta-ExternalAgent
 User-agent: CCBot
 Allow: /
 
