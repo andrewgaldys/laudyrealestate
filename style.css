@@ -1,0 +1,1691 @@
+/* ==========================================================================
+   Nick Napoli | Fort Lauderdale Waterfront Real Estate
+   Global stylesheet. Static, no build step, no JavaScript required.
+
+   Direction: dark, image-led and minimal. Full-viewport heroes, a
+   transparent header, uppercase geometric display type, outline pill
+   buttons, large numerals and generous negative space.
+
+   Contents
+   1. Tokens
+   2. Base & typography
+   3. Accessibility helpers
+   4. Layout & sections
+   5. Glass utilities (.glass-panel, .glass-nav)
+   6. Buttons, chips & links
+   7. Header & navigation
+   8. Hero
+   9. Stats
+   10. Home: full-screen cards
+   11. Alternating image / text features
+   12. Lists: specs, ranked, checks, wordlist, meters
+   13. Comparison table
+   14. Image band (contact)
+   15. Footer
+   16. Preference & fallback queries
+   ========================================================================== */
+
+/* 1. Tokens
+   ========================================================================== */
+:root {
+  --bg: #03070e;
+  --bg-raised: #08111f;
+  --navy-950: #050f22;
+  --navy-900: #0a1c38;
+  --navy-700: #183b6e;
+  --navy-600: #24508f;
+  --white: #ffffff;
+
+  --text: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.74);
+  --text-faint: rgba(255, 255, 255, 0.6);
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.32);
+  --sea: #b4cdea;
+
+  /* Dark overlay on photography. Averages roughly rgba(0,0,0,0.5). */
+  --overlay: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.52) 38%,
+    rgba(0, 0, 0, 0.56) 68%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+
+  --font-display: "Jost", "Futura", "Century Gothic", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --track-h1: 4px;
+  --track-h2: 3px;
+  --track-nav: 2px;
+  --track-label: 0.28em;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 30px;
+
+  --max: 1240px;
+  --gutter: clamp(1rem, 5vw, 3rem);
+  --header-h: 96px;
+  --section-y: clamp(6rem, 13vw, 11rem);
+  --head-gap: clamp(3rem, 6vw, 5rem);
+}
+
+/* 2. Base & typography
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-soft);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.75em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 1.2rem + 3.6vw, 4.5rem);
+  line-height: 1.12;
+  letter-spacing: var(--track-h1);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 1.1rem + 1.9vw, 2.75rem);
+  line-height: 1.22;
+  letter-spacing: var(--track-h2);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 1.25em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+a {
+  color: var(--text);
+  text-decoration-line: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--text);
+}
+
+.eyebrow {
+  display: block;
+  margin: 0 0 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.lede {
+  font-size: clamp(1.08rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.note {
+  font-size: 0.875rem;
+  color: var(--text-faint);
+}
+
+/* 3. Accessibility helpers
+   ========================================================================== */
+
+/* Two-tone focus ring stays visible on dark sections and on photography. */
+:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--navy-600);
+  border-radius: 4px;
+}
+
+.btn:focus-visible,
+.chip:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--navy-950);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 4. Layout & sections
+   ========================================================================== */
+.container {
+  width: min(var(--max), 100% - (var(--gutter) * 2));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--raised {
+  background: var(--bg-raised);
+}
+
+/* Soft navy light, so glass panels have something to refract. */
+.section--glow {
+  background:
+    radial-gradient(55% 50% at 5% 0%, rgba(36, 80, 143, 0.3), transparent 70%),
+    radial-gradient(45% 55% at 100% 100%, rgba(36, 80, 143, 0.22), transparent 70%),
+    var(--bg);
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: var(--head-gap);
+}
+
+.section-head > :last-child {
+  margin-bottom: 0;
+}
+
+.section-head p {
+  font-size: 1.125rem;
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.subhead {
+  margin: clamp(4rem, 7vw, 6rem) 0 2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  color: var(--sea);
+}
+
+/* 5. Glass utilities
+   ========================================================================== */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+/* Deeper tint for panels sitting on bright photography. */
+.glass-panel--dark {
+  background: rgba(3, 7, 14, 0.5);
+}
+
+/* Frosted navy bar. The header takes this look once the page scrolls. */
+.glass-nav {
+  background: rgba(3, 7, 14, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+}
+
+.card {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+/* 6. Buttons, chips & links
+   ========================================================================== */
+
+/* Transparent outline pill. Inverts to solid white on hover. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 1rem 2.6rem;
+  border: 1px solid #ffffff;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: var(--track-nav);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #ffffff;
+  color: var(--navy-950);
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding: 0.7rem 1.7rem;
+  font-size: 0.72rem;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-row--center {
+  justify-content: center;
+}
+
+/* Smaller, quieter pill for lists of options. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips--center {
+  justify-content: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.chip:hover,
+.chip:focus-visible {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--navy-950);
+}
+
+/* In-page anchor bar under guide heroes. */
+.jumpnav {
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+}
+
+.jumpnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem clamp(1.25rem, 3vw, 2.5rem);
+  margin: 0;
+  padding: 1.1rem 0;
+  list-style: none;
+}
+
+.jumpnav a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-soft);
+}
+
+.jumpnav a:hover {
+  color: var(--text);
+}
+
+/* 7. Header & navigation
+   ========================================================================== */
+
+/* Fixed, transparent header: split navigation around a centered name.
+   At the top of a page it is fully transparent. Once the page scrolls, a
+   soft top-down fade (not a solid bar) fades in so the links stay legible
+   over content passing underneath. */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  color: var(--white);
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -3rem;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(3, 7, 14, 0.9) 0%, rgba(3, 7, 14, 0.6) 60%, rgba(3, 7, 14, 0) 100%);
+  opacity: 0.6; /* browsers without scroll-driven animation keep a light fade */
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .site-header::before {
+    opacity: 0;
+    animation: header-fade linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 50vh;
+  }
+
+  @keyframes header-fade {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.site-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "left logo right";
+  align-items: center;
+  gap: 2rem;
+  min-height: var(--header-h);
+}
+
+.site-nav__group {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__group--left {
+  grid-area: left;
+}
+
+.site-nav__group--right {
+  grid-area: right;
+  justify-content: flex-end;
+}
+
+.site-nav__group a {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 0;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.site-nav__group a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 2.5px; /* trailing letter-spacing */
+  bottom: 0.2rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.site-nav__group a:hover::after,
+.site-nav__group a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Centered name. Padding on the left balances the trailing letter-spacing
+   so the word sits on the true center line. */
+.wordmark {
+  --logo-track: clamp(5px, 0.55vw, 9px);
+  grid-area: logo;
+  justify-self: center;
+  padding: 0.5rem 0 0.5rem var(--logo-track);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.85rem + 0.8vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: var(--logo-track);
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--white);
+  text-decoration: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.wordmark:hover {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 112px;
+  }
+
+  .site-nav {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "logo logo"
+      "left right";
+    gap: 0.35rem 1rem;
+    min-height: 0;
+    padding-top: 1rem;
+  }
+
+  .site-nav__group {
+    gap: 1.25rem;
+  }
+
+  .site-nav__group a {
+    padding: 0.75rem 0;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav__group {
+    gap: 0.9rem;
+  }
+
+  .site-nav__group a {
+    font-size: 0.64rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* 8. Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: calc(var(--header-h) + clamp(2.5rem, 7vh, 5rem));
+  padding-bottom: clamp(8rem, 15vh, 10rem);
+  overflow: hidden;
+  color: var(--white);
+  background: radial-gradient(80% 60% at 70% 20%, #16243a, #000 75%);
+}
+
+/* Works for <img> and <video>. */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  color: transparent;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--overlay);
+}
+
+/* Everything over imagery is crisp white. */
+.hero :is(h1, p, li, .eyebrow, .breadcrumb),
+.hero a:not(.btn) {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 {
+  margin-bottom: 0;
+}
+
+.hero .lede {
+  max-width: 46ch;
+  margin: 1.75rem 0 0;
+}
+
+.hero__rule {
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero__subtitle {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 0.75rem + 0.3vw, 1rem);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.hero__meta {
+  margin: 1.75rem 0 0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+}
+
+/* Centered (Home). */
+.hero--center .hero__content {
+  max-width: 1040px;
+  text-align: center;
+}
+
+.hero--center .lede,
+.hero--center .hero__rule {
+  margin-inline: auto;
+}
+
+.hero--center .btn-row {
+  justify-content: center;
+}
+
+/* Left-aligned (inner pages). */
+.hero--page .hero__content > * {
+  max-width: 860px;
+}
+
+.hero--page h1 {
+  font-size: clamp(2rem, 1.2rem + 3.2vw, 4rem);
+}
+
+/* Portrait hero (About): darker on the text side, open on the subject. */
+.hero--portrait .hero__media {
+  object-position: 75% 30%;
+}
+
+.hero--portrait::before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 30%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.hero--portrait .hero__content > * {
+  max-width: 620px;
+}
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero__scroll::after {
+  content: "";
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .hero--portrait::before {
+    background: var(--overlay);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --track-h1: 3px;
+    --track-h2: 2px;
+  }
+
+  .hero {
+    padding-top: calc(var(--header-h) + 2.5rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+
+  .hero .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn-row .btn {
+    width: 100%;
+  }
+
+  .hero--center .hero__content {
+    text-align: left;
+  }
+
+  .hero--center .hero__rule {
+    margin-inline: 0;
+  }
+}
+
+/* 9. Stats
+   ========================================================================== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.stats--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Words instead of numbers (boat dimensions). */
+.stats--words .stat__value {
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 3.1rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.stat {
+  padding: clamp(2rem, 3.5vw, 3rem) clamp(1.25rem, 2.5vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.stat__value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 1.9rem + 2.6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.stat__label {
+  margin: 1.5rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.stat__note {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-faint);
+}
+
+.stats-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.stats-foot .note {
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .stats,
+  .stats--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .stats,
+  .stats--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* 10. Home: full-screen cards
+   ========================================================================== */
+
+/* The Home page is four full-screen cards that snap into place on scroll. */
+html:has(.screens) {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
+}
+
+.screen {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100%; /* avoids a sideways scrollbar where 100vw includes it */
+  height: 100vh;
+  height: 100svh; /* mobile: excludes the browser toolbar */
+  min-height: 34rem;
+  padding: var(--header-h) var(--gutter) 4.5rem;
+  overflow: hidden;
+  background-color: #05080f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  text-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Dark gradient overlay so white type stays crisp on any photo. */
+.screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--overlay);
+}
+
+/* Card photos. To change one, replace the file (keep the name). */
+.screen--title {
+  background-image: url("images/homepage.jpg");
+}
+
+.screen--waterfront {
+  background-image: url("images/home-waterfront.jpg");
+}
+
+.screen--neighborhoods {
+  background-image: url("images/home-neighborhoods.jpg");
+}
+
+.screen--nick {
+  background-image: url("images/home-nick.jpg");
+}
+
+.screen__content {
+  max-width: 920px;
+}
+
+.screen :is(h1, h2, p, .eyebrow) {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.screen h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 1.1rem + 5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.screen h2 {
+  margin: 0;
+  font-size: clamp(2rem, 1.1rem + 3.8vw, 4.75rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.screen .lede {
+  max-width: 44ch;
+  margin: 1.75rem auto 0;
+}
+
+.screen .btn-row {
+  justify-content: center;
+}
+
+.screen__divider {
+  display: inline-block;
+  margin: 0 0.4em;
+  opacity: 0.6;
+}
+
+.site-footer {
+  scroll-snap-align: end;
+}
+
+@media (max-width: 600px) {
+  .screen .btn-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .screen .btn-row .btn {
+    width: min(100%, 20rem);
+  }
+
+  .screen__divider {
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+/* 11. Alternating image / text features
+   ========================================================================== */
+.feature {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.feature + .feature {
+  margin-top: clamp(6rem, 11vw, 10rem);
+}
+
+.feature__media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--navy-900), #000);
+}
+
+.feature__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  color: transparent;
+  transition: transform 1.2s ease;
+}
+
+.feature:hover .feature__media img {
+  transform: scale(1.03);
+}
+
+.feature--landscape .feature__media img {
+  aspect-ratio: 4 / 3;
+}
+
+.feature--flip .feature__media {
+  order: 2;
+}
+
+.feature__body {
+  max-width: 540px;
+}
+
+.feature__body > :last-child {
+  margin-bottom: 0;
+}
+
+.feature__body > p {
+  font-size: 1.125rem;
+}
+
+.feature__title {
+  font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.6rem);
+  letter-spacing: var(--track-h2);
+}
+
+.feature__body .list-diamond {
+  margin: 0.5rem 0 0;
+}
+
+.feature__body .ranked {
+  margin-top: 2rem;
+}
+
+.feature__note {
+  margin: 1.75rem 0 0;
+  color: var(--text);
+}
+
+.feature__note span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+@media (max-width: 900px) {
+  .feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .feature__media img,
+  .feature--landscape .feature__media img {
+    aspect-ratio: 16 / 11;
+  }
+
+  .feature--flip .feature__media {
+    order: 0;
+  }
+}
+
+/* 12. Lists: specs, ranked, checks, wordlist, meters
+   ========================================================================== */
+
+/* Label / value rows. */
+.specs {
+  margin: 2.25rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.specs > div {
+  display: grid;
+  grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.specs dt {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  line-height: 1.9;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.specs dd {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+  .specs > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
+  }
+}
+
+/* Numbered rows with large light numerals. */
+.ranked {
+  counter-reset: rank;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.ranked li {
+  counter-increment: rank;
+  display: grid;
+  grid-template-columns: clamp(3rem, 6vw, 5rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: baseline;
+  padding: clamp(1.4rem, 2.5vw, 1.9rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ranked li::before {
+  content: counter(rank, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  font-weight: 300;
+  color: var(--sea);
+}
+
+.ranked strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ranked span {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Short checklist items in a grid. */
+.checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 0 clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.checks li {
+  position: relative;
+  padding: 1.2rem 0 1.2rem 1.6rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+
+.checks li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 1.85rem;
+  width: 6px;
+  height: 6px;
+  background: var(--sea);
+  transform: rotate(45deg);
+}
+
+.list-diamond {
+  padding: 0;
+  list-style: none;
+}
+
+.list-diamond li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.list-diamond li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  background: var(--sea);
+  transform: rotate(45deg);
+}
+
+/* Large uppercase words, one per row. */
+.wordlist {
+  counter-reset: word;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.wordlist li {
+  counter-increment: word;
+  display: grid;
+  grid-template-columns: clamp(2.5rem, 5vw, 4rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: clamp(1.6rem, 3vw, 2.4rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordlist li::before {
+  content: counter(word, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--sea);
+}
+
+.wordlist__title {
+  margin: 0;
+  font-size: clamp(1.4rem, 0.9rem + 2.2vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 3px;
+  line-height: 1.15;
+}
+
+.wordlist__line {
+  margin: 0.6rem 0 0;
+  color: var(--text-soft);
+}
+
+/* Dot meters (1–5) for neighborhood ratings. */
+.meters {
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.meters > div {
+  display: grid;
+  grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.meters dt {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.meters dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.dots {
+  display: inline-flex;
+  flex: none;
+  gap: 5px;
+}
+
+.dots i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.dots i.on {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+/* 13. Comparison table
+   ========================================================================== */
+.compare-wrap {
+  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(0.5rem, 2.5vw, 2rem);
+}
+
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.compare th,
+.compare td {
+  padding: 1.4rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare thead th {
+  padding-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.compare tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.compare tbody th {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.compare tbody th a {
+  text-decoration: none;
+}
+
+.compare tbody th a:hover {
+  text-decoration: underline;
+}
+
+.compare td .dots {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .compare thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .compare,
+  .compare tbody,
+  .compare tr,
+  .compare th,
+  .compare td {
+    display: block;
+  }
+
+  .compare tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1rem;
+    padding: 1.6rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .compare tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .compare tbody th {
+    grid-column: 1 / -1;
+  }
+
+  .compare tbody th,
+  .compare td {
+    padding: 0;
+    border: 0;
+  }
+
+  .compare td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: var(--track-nav);
+    text-transform: uppercase;
+    color: var(--sea);
+  }
+}
+
+/* 14. Image band (contact)
+   ========================================================================== */
+.band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  background: linear-gradient(180deg, var(--navy-900), #000);
+  text-align: center;
+}
+
+.band__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: transparent;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.band__panel {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.band__panel p {
+  color: var(--text);
+}
+
+.band__panel > p:not(.eyebrow) {
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+/* 15. Footer
+   ========================================================================== */
+.site-footer {
+  padding-block: clamp(5rem, 9vw, 7rem) 2.5rem;
+  background: #010306;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.footer-wordmark {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.footer-heading {
+  margin: 0 0 1.1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  color: var(--sea);
+}
+
+.footer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-list a {
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  align-items: start;
+  margin-top: clamp(3.5rem, 6vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.footer-legal p {
+  margin: 0 0 0.5rem;
+}
+
+.eho {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eho svg {
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-legal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* 16. Preference & fallback queries
+   ========================================================================== */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: rgba(8, 17, 31, 0.92);
+  }
+
+  .glass-nav {
+    background: rgba(3, 7, 14, 0.96);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel,
+  .glass-nav {
+    background: var(--bg-raised);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Background video gives way to its still image. */
+  video.hero__media {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .glass-panel,
+  .btn,
+  .chip {
+    border: 1px solid CanvasText;
+  }
+
+  .dots i.on {
+    background: CanvasText;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .site-header,
+  .band,
+  .skip-link,
+  .jumpnav,
+  .hero__media,
+  .hero__scroll,
+  .screen::before,
+  .feature__media {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  dt,
+  dd,
+  .hero :is(h1, p, li, .eyebrow) {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+}
