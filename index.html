@@ -25,7 +25,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Inter:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -133,7 +133,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header glass-nav">
+  <header class="site-header">
     <div class="container site-header__inner">
       <a class="wordmark" href="./">
         <span class="wordmark__name">Nick Napoli</span>
@@ -147,44 +147,38 @@
           <li><a href="about.html">About Nick</a></li>
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm site-header__cta" href="#contact">Contact Nick</a>
+      <a class="btn btn--sm site-header__cta" href="#contact">Contact Nick</a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
 
-    <!-- HERO
-         REPLACE images/hero-fort-lauderdale-drone.jpg with a 2400×1350 drone still (keep the file name).
-         For drone video, swap the <img> for:
-         <video class="hero__media" autoplay muted loop playsinline poster="images/hero-fort-lauderdale-drone.jpg" aria-hidden="true">
+    <!-- HERO: full-viewport background.
+         REPLACE images/hero-fort-lauderdale-drone.jpg with a dark-toned 2400×1350 drone still (keep the file name).
+         VIDEO OPTION: keep the <img> as the fallback and add this directly after it.
+         Visitors who prefer reduced motion automatically see the still image instead.
+         <video class="hero__media" autoplay muted loop playsinline preload="metadata"
+                poster="images/hero-fort-lauderdale-drone.jpg" aria-hidden="true">
            <source src="video/hero-fort-lauderdale-drone.mp4" type="video/mp4">
          </video>
-         Update the alt text below if the final shot shows something different. -->
-    <section class="hero" aria-labelledby="page-title">
+         Update the alt text if the final shot shows something different. -->
+    <section class="hero hero--center" aria-labelledby="page-title">
       <img class="hero__media"
            src="images/hero-fort-lauderdale-drone.jpg"
            alt="Aerial drone view of Fort Lauderdale's residential finger isles and the Intracoastal Waterway, with boats docked along the seawalls"
            width="2400" height="1350" fetchpriority="high" decoding="async">
-      <div class="container">
-        <div class="hero__panel glass-panel glass-panel--dark">
-          <p class="eyebrow">Fort Lauderdale · Waterfront &amp; Luxury Residential</p>
-          <h1 id="page-title">Fort Lauderdale Waterfront Real Estate, Evaluated From the Water Up</h1>
-          <p class="lede">Nick Napoli represents buyers and sellers of Fort Lauderdale waterfront homes, estates and oceanfront condominiums. Before any conversation about finishes or price, he works through the details that decide what a waterfront property is actually worth: the route to the ocean, every bridge on it, usable dock length, depth at low tide, and the height and condition of the seawall.</p>
-          <ul class="btn-row">
-            <li><a class="btn btn--light" href="#contact">Contact Nick</a></li>
-            <li><a class="btn btn--ghost-light" href="waterfront.html">Read the boating-access guide</a></li>
-          </ul>
-          <div class="hero__starts">
-            <p>Start with something specific:</p>
-            <ul>
-              <li>A property address</li>
-              <li>A search brief</li>
-              <li>Your boat's dimensions</li>
-              <li>A sale objective</li>
-            </ul>
-          </div>
-        </div>
+      <div class="container hero__content">
+        <p class="eyebrow">Fort Lauderdale · Waterfront &amp; Luxury Residential</p>
+        <h1 id="page-title">Fort Lauderdale Waterfront Real Estate</h1>
+        <span class="hero__rule" aria-hidden="true"></span>
+        <p class="lede">Nick Napoli represents buyers and sellers of Fort Lauderdale waterfront homes, estates and oceanfront condominiums, and evaluates every property from the water up: the route to the ocean, every bridge on it, usable dock length, depth at low tide, and the height and condition of the seawall.</p>
+        <ul class="btn-row">
+          <li><a class="btn" href="#contact">Contact Nick</a></li>
+          <li><a class="btn" href="waterfront.html">Read the boating-access guide</a></li>
+        </ul>
+        <p class="hero__starts">Start with an address, a search brief, your boat's dimensions or a sale objective.</p>
       </div>
+      <a class="hero__scroll" href="#value-drivers">Explore</a>
     </section>
 
     <!-- VALUE DRIVERS -->
@@ -201,37 +195,37 @@
             <span class="card__index" aria-hidden="true">01</span>
             <h3>Route to the ocean</h3>
             <p>Which inlet, how many bridges, and how many minutes at posted speeds. Port Everglades is the deepwater inlet for most of the city; owners farther north may weigh the Hillsboro Inlet instead.</p>
-            <a class="link-arrow" href="waterfront.html#ocean-access">How ocean access is evaluated <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#ocean-access">How ocean access is evaluated&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="card glass-panel">
             <span class="card__index" aria-hidden="true">02</span>
             <h3>Bridge clearance</h3>
             <p>A fixed bridge sets a hard limit on your boat's air draft and removes every buyer whose boat doesn't fit. A bascule (draw) bridge costs time instead, on a published opening schedule.</p>
-            <a class="link-arrow" href="waterfront.html#bridges">Fixed vs. bascule bridges explained <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#bridges">Fixed vs. bascule bridges explained&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="card glass-panel">
             <span class="card__index" aria-hidden="true">03</span>
             <h3>Usable frontage</h3>
             <p>Frontage on a plat is not usable dock length. Canal width, side setbacks and the City's limits on how far a dock may project into the water decide what you can actually tie up.</p>
-            <a class="link-arrow" href="waterfront.html#frontage">How frontage and dock limits work <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#frontage">How frontage and dock limits work&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="card glass-panel">
             <span class="card__index" aria-hidden="true">04</span>
             <h3>Depth at the dock</h3>
             <p>Listings rarely state depth at mean low water, which is the number that matters to a keel or running gear. Canal mouths and turning basins can shoal; soundings settle the question.</p>
-            <a class="link-arrow" href="waterfront.html#depth">Checking depth along the route <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#depth">Checking depth along the route&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="card glass-panel">
             <span class="card__index" aria-hidden="true">05</span>
             <h3>Seawall height &amp; condition</h3>
             <p>Broward County's tidal flood barrier standard ties new and substantially repaired seawalls to minimum elevations. A wall that needs replacement is a capital cost the price should reflect.</p>
-            <a class="link-arrow" href="waterfront.html#seawalls">Seawall rules and inspection points <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#seawalls">Seawall rules and inspection points&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="card card--plain">
             <span class="card__index" aria-hidden="true">→</span>
             <h3>Then the house</h3>
             <p>Only once the water is accounted for do interiors, architecture and finishes enter the comparison. That order is how buyers on the water actually spend, and how Nick builds comparable sales.</p>
-            <a class="link-arrow" href="waterfront.html#valuation">How these variables move price <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="waterfront.html#valuation">How these variables move price&nbsp;<span aria-hidden="true">→</span></a>
           </li>
         </ol>
       </div>
@@ -256,7 +250,7 @@
               <p class="eyebrow">Waterfront guide</p>
               <h3>How to evaluate boating access in Fort Lauderdale</h3>
               <p>Fixed bridges versus ocean access, frontage and dock limits, depth, seawall height and condition, and how each variable moves price.</p>
-              <a class="btn btn--light btn--sm" href="waterfront.html">Read the waterfront guide</a>
+              <a class="btn btn--sm" href="waterfront.html">Read the waterfront guide</a>
             </div>
           </article>
 
@@ -269,7 +263,7 @@
               <p class="eyebrow">Neighborhood comparison</p>
               <h3>Five neighborhoods, compared for luxury buyers</h3>
               <p>Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista and Victoria Park, compared on walkability, dockage availability and lot size.</p>
-              <a class="btn btn--light btn--sm" href="neighborhoods.html">Compare the neighborhoods</a>
+              <a class="btn btn--sm" href="neighborhoods.html">Compare the neighborhoods</a>
             </div>
           </article>
         </div>
@@ -393,8 +387,8 @@
           <h2 id="contact-title">Start with something specific</h2>
           <p>General questions get general answers. Send one of these four starting points and Nick's first reply will deal with your actual property, search or boat.</p>
           <ul class="btn-row">
-            <li><a class="btn btn--light" href="tel:+19545550100">Call (954) 555-0100</a></li>
-            <li><a class="btn btn--ghost-light" href="mailto:nick@yourdomain.com">Email Nick</a></li>
+            <li><a class="btn" href="tel:+19545550100">Call (954) 555-0100</a></li>
+            <li><a class="btn" href="mailto:nick@yourdomain.com">Email Nick</a></li>
           </ul>
           <p class="note"><a href="about.html#contact">See exactly what to include, or use the contact form</a></p>
         </div>
@@ -403,22 +397,22 @@
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A property address</h3>
             <p>Buying or selling a specific home? Send the address, which side of the deal you're on and your timeline.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A search brief</h3>
             <p>Neighborhoods or lifestyle, budget range, must-haves, deal-breakers and timing.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>Your boat's dimensions</h3>
             <p>Length overall, beam, loaded draft and air draft, plus how you use the boat and the life you want on land.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A sale objective</h3>
             <p>The address, what matters most to you, timing constraints and work already done to the property.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective&nbsp;<span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
