@@ -24,7 +24,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Inter:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -34,7 +34,7 @@
       {
         "@type": "Article",
         "@id": "https://www.yourdomain.com/waterfront.html#article",
-        "headline": "How to Evaluate Boating Access on a Fort Lauderdale Waterfront Property",
+        "headline": "How to Evaluate Fort Lauderdale Boating Access",
         "description": "Fixed vs. bascule bridges, ocean access, water frontage and dock limits, depth, seawall height and condition, and how each variable changes the value of a Fort Lauderdale waterfront home.",
         "image": "https://www.yourdomain.com/images/waterfront-hero-drone.jpg",
         "datePublished": "2026-09-30",
@@ -62,7 +62,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header glass-nav">
+  <header class="site-header">
     <div class="container site-header__inner">
       <a class="wordmark" href="./">
         <span class="wordmark__name">Nick Napoli</span>
@@ -76,54 +76,59 @@
           <li><a href="about.html">About Nick</a></li>
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm site-header__cta" href="#contact">Contact Nick</a>
+      <a class="btn btn--sm site-header__cta" href="#contact">Contact Nick</a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
 
-    <!-- HERO: REPLACE images/waterfront-hero-drone.jpg with a 2400×1100 drone still (keep the file name). -->
-    <section class="hero hero--page hero--with-figures" aria-labelledby="page-title">
+    <!-- HERO: full-viewport background.
+         REPLACE images/waterfront-hero-drone.jpg with a dark-toned 2400×1100 drone still (keep the file name).
+         For video, add a <video class="hero__media"> after the <img>, as shown in index.html. -->
+    <section class="hero hero--page" aria-labelledby="page-title">
       <img class="hero__media"
            src="images/waterfront-hero-drone.jpg"
            alt="Aerial drone view of a Fort Lauderdale residential canal opening onto the Intracoastal Waterway, with private docks and boat lifts along the seawalls"
            width="2400" height="1100" fetchpriority="high" decoding="async">
-      <div class="container">
-        <div class="hero__panel glass-panel glass-panel--dark">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-              <li><a href="./">Home</a></li>
-              <li aria-current="page">Waterfront guide</li>
-            </ol>
-          </nav>
-          <h1 id="page-title">How to Evaluate Boating Access on a Fort Lauderdale Waterfront Property</h1>
-          <p class="lede">A waterfront listing tells you the frontage and shows you the view. It rarely tells you whether your boat can reach the ocean, how long the trip takes, or what the seawall will cost you. This guide walks through the variables Nick Napoli checks on every Fort Lauderdale waterfront property, in the order they rule properties in or out.</p>
-          <p class="byline">
-            <span>By <a href="about.html">Nick Napoli</a></span>
-            <span>Last reviewed <time datetime="2026-09-30">September 30, 2026</time></span>
-          </p>
-        </div>
+      <div class="container hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="./">Home</a></li>
+            <li aria-current="page">Waterfront guide</li>
+          </ol>
+        </nav>
+        <h1 id="page-title">How to Evaluate Fort Lauderdale Boating Access</h1>
+        <span class="hero__rule" aria-hidden="true"></span>
+        <p class="lede">A waterfront listing tells you the frontage and shows you the view. It rarely tells you whether your boat can reach the ocean, how long the trip takes, or what the seawall will cost you. This guide walks through the variables Nick Napoli checks on every Fort Lauderdale waterfront property, in the order they rule properties in or out.</p>
+        <p class="byline">
+          <span>By <a href="about.html">Nick Napoli</a></span>
+          <span>Last reviewed <time datetime="2026-09-30">September 30, 2026</time></span>
+        </p>
+        <ul class="btn-row">
+          <li><a class="btn" href="#contact">Send your boat's dimensions</a></li>
+        </ul>
       </div>
+      <a class="hero__scroll" href="#reference-figures">Explore</a>
     </section>
 
     <!-- REFERENCE FIGURES -->
-    <section class="figures" aria-labelledby="figures-title">
+    <section class="figures" id="reference-figures" aria-labelledby="figures-title">
       <div class="container">
         <h2 id="figures-title" class="visually-hidden">Reference figures</h2>
         <ul class="figures__list">
-          <li class="figure-tile glass-panel">
+          <li class="figure-tile">
             <p class="figure-tile__value">55 ft</p>
             <p class="figure-tile__label">Published closed vertical clearance of the 17th Street Causeway bascule bridge, the Intracoastal crossing between central Fort Lauderdale and Port Everglades.</p>
           </li>
-          <li class="figure-tile glass-panel">
+          <li class="figure-tile">
             <p class="figure-tile__value">4 ft</p>
             <p class="figure-tile__label">Closed clearance of the Florida East Coast Railway bascule on the New River downtown. It rests open and closes for trains, for no more than 60 consecutive minutes.</p>
           </li>
-          <li class="figure-tile glass-panel">
+          <li class="figure-tile">
             <p class="figure-tile__value">25 ft</p>
             <p class="figure-tile__label">Maximum projection of a dock into a waterway under Fort Lauderdale ULDR §47-19.3, or 25% of the waterway width if that is less.</p>
           </li>
-          <li class="figure-tile glass-panel">
+          <li class="figure-tile">
             <p class="figure-tile__value">4 → 5 ft</p>
             <p class="figure-tile__label">Broward County minimum seawall elevation (NAVD88) for new or substantially repaired walls permitted before 2035, built to accommodate 5 ft by 2050.</p>
           </li>
@@ -354,8 +359,8 @@
           <h2 id="contact-title">Send Nick your boat's dimensions</h2>
           <p>Length overall, beam, loaded draft and air draft are enough to show which Fort Lauderdale waterways work for your boat and which don't. Add how you use it and what you want on land, and the first reply will be a short list, not a sales pitch.</p>
           <ul class="btn-row">
-            <li><a class="btn btn--light" href="tel:+19545550100">Call (954) 555-0100</a></li>
-            <li><a class="btn btn--ghost-light" href="mailto:nick@yourdomain.com">Email Nick</a></li>
+            <li><a class="btn" href="tel:+19545550100">Call (954) 555-0100</a></li>
+            <li><a class="btn" href="mailto:nick@yourdomain.com">Email Nick</a></li>
           </ul>
           <p class="note"><a href="about.html#contact">See exactly what to include, or use the contact form</a></p>
         </div>
@@ -364,22 +369,22 @@
           <li class="start-card glass-panel glass-panel--dark">
             <h3>Your boat's dimensions</h3>
             <p>Length overall, beam, loaded draft and air draft, plus how you use the boat and the life you want on land.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Boat%20dimensions%20and%20waterfront%20search&amp;body=Boat%20(make%2C%20model%2C%20year)%3A%0D%0ALength%20overall%20(LOA)%3A%0D%0ABeam%3A%0D%0ADraft%2C%20loaded%3A%0D%0AAir%20draft%20(highest%20fixed%20point)%3A%0D%0AHow%20you%20use%20the%20boat%3A%0D%0ATarget%20lifestyle%20on%20land%3A">Email boat dimensions&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A property address</h3>
             <p>Considering a specific waterfront home? Send the address and Nick will trace its route, clearances and seawall questions.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Property%20evaluation&amp;body=Address%20or%20MLS%20number%3A%0D%0ABuying%20or%20selling%3A%0D%0ATimeline%3A%0D%0AKnown%20issues%20(seawall%2C%20dock%2C%20flood%20history)%3A">Email an address&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A search brief</h3>
             <p>Neighborhoods or lifestyle, budget range, must-haves, deal-breakers and timing.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Search%20brief&amp;body=Neighborhoods%20or%20lifestyle%3A%0D%0ABudget%20range%3A%0D%0AMust-haves%3A%0D%0ADeal-breakers%3A%0D%0ATiming%3A">Email a search brief&nbsp;<span aria-hidden="true">→</span></a>
           </li>
           <li class="start-card glass-panel glass-panel--dark">
             <h3>A sale objective</h3>
             <p>Selling on the water? Send the address, what matters most and the work already done to the seawall and dock.</p>
-            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective <span aria-hidden="true">→</span></a>
+            <a href="mailto:nick@yourdomain.com?subject=Sale%20objective&amp;body=Property%20address%3A%0D%0AWhat%20matters%20most%20(price%2C%20speed%2C%20certainty%2C%20privacy)%3A%0D%0ATiming%3A%0D%0AWork%20done%20to%20seawall%2C%20dock%2C%20roof%2C%20systems%3A">Email a sale objective&nbsp;<span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
