@@ -27,7 +27,7 @@ Replace any photo by saving a new one **with the same file name** into `images/`
 
 | File | Used on |
 |---|---|
-| `video/home-canal.mp4`, `video/home-canal-720.mp4`, `images/home-canal-poster.jpg` | Home card 1 (10-second clip from the Sep 22 drone video) |
+| `video/home-canal.mp4`, `video/home-canal-720.mp4`, `images/home-canal-poster.jpg` | Home card 1: a 19-second loop that crossfades between the Sep 22 canal flight and the Jul 1 Intracoastal estates flight |
 | `home-market.jpg` | Home card 2 |
 | `home-waterfront.jpg` | Home card 3 |
 | `home-nick.jpg` / `home-nick-tall.jpg` | Home card 4 (desktop / phones) |
