@@ -16,13 +16,12 @@
   <meta property="og:description" content="Residential, waterfront and commercial real estate. Concierge service and superior market knowledge.">
   <meta property="og:url" content="https://laudyrealestate.com/">
   <meta property="og:image" content="https://laudyrealestate.com/images/og-image.jpg">
-  <meta property="og:image:alt" content="Aerial view of Fort Lauderdale waterfront homes and the Intracoastal Waterway">
+  <meta property="og:image:alt" content="Aerial view of Fort Lauderdale’s Intracoastal Waterway">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <!-- The first card's photo is a CSS background, so preload it for a fast first paint. -->
-  <link rel="preload" as="image" href="images/homepage.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="images/home-canal-poster.jpg" fetchpriority="high">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +48,7 @@
         "name": "Fort Lauderdale Real Estate | Nicholas Napoli, Esq.",
         "isPartOf": { "@id": "https://laudyrealestate.com/#website" },
         "about": { "@id": "https://laudyrealestate.com/#agent" },
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://laudyrealestate.com/images/homepage.jpg" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://laudyrealestate.com/images/home-canal-poster.jpg" },
         "inLanguage": "en-US",
         "dateModified": "2026-10-06"
       },
@@ -61,7 +60,7 @@
         "alternateName": "Nick Napoli",
         "jobTitle": "Realtor",
         "description": "Realtor with Fidelity Real Estate LLC, residential waterfront developer and practicing attorney in Fort Lauderdale, Florida.",
-        "url": "https://laudyrealestate.com/about.html",
+        "url": "https://laudyrealestate.com/about",
         "image": "https://laudyrealestate.com/images/nick-napoli-portrait.jpg",
         "email": "mailto:nicknapolire@gmail.com",
         "telephone": "+1-954-815-8278",
@@ -97,69 +96,65 @@
   <header class="site-header">
     <nav class="container site-nav" aria-label="Primary">
       <ul class="site-nav__group site-nav__group--left">
-        <li><a href="neighborhoods.html">Neighborhoods</a></li>
-        <li><a href="waterfront.html">Waterfront</a></li>
+        <li><a href="/neighborhoods">Neighborhoods</a></li>
+        <li><a href="/waterfront">Waterfront</a></li>
       </ul>
-      <a class="wordmark" href="./" aria-current="page">Nicholas Napoli, Esq.</a>
+      <a class="wordmark" href="/" aria-current="page">Nicholas Napoli, Esq.</a>
       <ul class="site-nav__group site-nav__group--right">
-        <li><a href="about.html">About</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="#nick">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Four full-screen cards. Each card's photo is set in style.css
-       (section 10). To change a photo, replace the file and keep its name:
-       Card 1 images/homepage.jpg · Card 2 images/home-market.jpg
-       Card 3 images/home-waterfront.jpg
-       Card 4 images/home-nick.jpg (desktop) and images/home-nick-tall.jpg (phones) -->
+  <!-- Card 1 plays video/home-canal.mp4 (phones: home-canal-720.mp4) over
+       images/home-canal-poster.jpg. Cards 2-4 photos are set in style.css. -->
   <main id="main" class="screens" tabindex="-1">
 
-    <!-- CARD 1: Title -->
     <section class="screen screen--title" aria-labelledby="page-title">
+      <video class="screen__video" autoplay muted loop playsinline preload="auto" poster="images/home-canal-poster.jpg" aria-hidden="true">
+        <source src="video/home-canal-720.mp4" type="video/mp4" media="(max-width: 800px)">
+        <source src="video/home-canal.mp4" type="video/mp4">
+      </video>
       <div class="screen__content">
         <p class="eyebrow">Fort Lauderdale Real Estate</p>
         <h1 id="page-title">Residential. Waterfront. Commercial.</h1>
         <p class="lede">Concierge service. Superior market knowledge.</p>
         <ul class="btn-row">
           <li><a class="btn" href="mailto:nicknapolire@gmail.com?subject=Website%20Inquiry&amp;body=Name%3A%0D%0APhone%3A%0D%0ABuying%2C%20selling%20or%20investing%3A%0D%0AProperty%20or%20area%3A%0D%0ATiming%3A">Inquire Now</a></li>
-          <li><a class="btn" href="about.html">Meet Nicholas</a></li>
+          <li><a class="btn" href="/about">Meet Nicholas</a></li>
         </ul>
       </div>
       <a class="hero__scroll" href="#market">Scroll</a>
     </section>
 
-    <!-- CARD 2: Market knowledge -->
     <section class="screen screen--market" id="market" aria-labelledby="market-title">
       <div class="screen__content">
         <p class="eyebrow">Market Knowledge</p>
         <h2 id="market-title">What’s Selling. What’s Sitting. Why.</h2>
         <p class="lede">Residential and commercial, studied before any recommendation is made.</p>
         <ul class="btn-row">
-          <li><a class="btn" href="neighborhoods.html">Compare Neighborhoods</a></li>
+          <li><a class="btn" href="/neighborhoods">Explore Neighborhoods</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- CARD 3: Waterfront -->
     <section class="screen screen--waterfront" id="waterfront" aria-labelledby="waterfront-title">
       <div class="screen__content">
         <p class="eyebrow">Waterfront</p>
         <h2 id="waterfront-title">The Water, Measured.</h2>
         <p class="lede">Bridge clearance, depth and seawalls, verified before you buy.</p>
         <ul class="btn-row">
-          <li><a class="btn" href="waterfront.html">Read the Boating Access Guide</a></li>
+          <li><a class="btn" href="/waterfront">Boating Access Guide</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- CARD 4: Nicholas / contact -->
     <section class="screen screen--nick" id="nick" aria-labelledby="nick-title">
       <div class="screen__content">
         <p class="eyebrow">Fidelity Real Estate LLC</p>
         <h2 id="nick-title">Nicholas Napoli, Esq.</h2>
         <p class="screen__subtitle">Realtor · Developer · Attorney</p>
-        <p class="lede">“You deserve someone who knows your priorities, tells you what they think, and stays involved as the deal moves forward.”</p>
         <ul class="btn-row">
           <li><a class="btn" href="mailto:nicknapolire@gmail.com?subject=Website%20Inquiry&amp;body=Name%3A%0D%0APhone%3A%0D%0ABuying%2C%20selling%20or%20investing%3A%0D%0AProperty%20or%20area%3A%0D%0ATiming%3A">Inquire Now</a></li>
           <li><a class="btn" href="tel:+19548158278"><span class="visually-hidden">Call </span>(954) 815-8278</a></li>
@@ -179,10 +174,10 @@
         <nav aria-label="Footer">
           <h2 class="footer-heading">Explore</h2>
           <ul class="footer-list">
-            <li><a href="./">Home</a></li>
-            <li><a href="neighborhoods.html">Neighborhood Comparison</a></li>
-            <li><a href="waterfront.html">Boating Access Guide</a></li>
-            <li><a href="about.html">About Nicholas</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/neighborhoods">Neighborhoods</a></li>
+            <li><a href="/waterfront">Boating Access Guide</a></li>
+            <li><a href="/about">About Nicholas</a></li>
           </ul>
         </nav>
         <div>
