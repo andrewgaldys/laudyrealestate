@@ -12,7 +12,7 @@
    3. Accessibility helpers
    4. Layout & sections
    5. Glass utilities (.glass-panel, .glass-nav)
-   6. Buttons, chips & links
+   6. Buttons & links
    7. Header & navigation
    8. Hero
    9. Stats
@@ -205,8 +205,7 @@ a:hover {
   border-radius: 4px;
 }
 
-.btn:focus-visible,
-.chip:focus-visible {
+.btn:focus-visible {
   border-radius: var(--radius-pill);
 }
 
@@ -344,7 +343,7 @@ main:focus {
   margin-bottom: 0;
 }
 
-/* 6. Buttons, chips & links
+/* 6. Buttons & links
    ========================================================================== */
 
 /* Transparent outline pill. Inverts to solid white on hover. */
@@ -393,44 +392,6 @@ main:focus {
 
 .btn-row--center {
   justify-content: center;
-}
-
-/* Smaller, quieter pill for lists of options. */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 2.5rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.chips--center {
-  justify-content: center;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: var(--track-nav);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-}
-
-.chip:hover,
-.chip:focus-visible {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--navy-950);
 }
 
 /* In-page anchor bar under guide heroes. */
@@ -587,7 +548,7 @@ main:focus {
   color: var(--white);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   :root {
     --header-h: 112px;
   }
@@ -610,6 +571,13 @@ main:focus {
     padding: 0.75rem 0;
     font-size: 0.68rem;
     letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wordmark {
+    --logo-track: 3.5px;
+    font-size: 1rem;
   }
 }
 
@@ -726,8 +694,14 @@ main:focus {
 }
 
 /* Portrait hero (About): darker on the text side, open on the subject. */
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
 .hero--portrait .hero__media {
-  object-position: 75% 30%;
+  object-position: center 35%;
 }
 
 .hero--portrait::before {
@@ -784,9 +758,37 @@ main:focus {
   margin-right: 0.6rem;
 }
 
-@media (max-width: 900px) {
+/* Phones: photo on top, text below, so the text never covers his face. */
+@media (max-width: 700px) {
+  .hero.hero--portrait {
+    display: block;
+    min-height: 0;
+    padding: 0 0 4rem;
+  }
+
   .hero--portrait::before {
-    background: var(--overlay);
+    display: none;
+  }
+
+  .hero--portrait .hero__photo {
+    position: relative;
+    z-index: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero--portrait .hero__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0) 72%, var(--bg) 100%);
+  }
+
+  .hero--portrait .hero__media {
+    object-position: center 30%;
+  }
+
+  .hero--portrait .hero__content {
+    padding-top: 1rem;
   }
 }
 
@@ -954,16 +956,51 @@ html:has(.screens) {
   background-image: url("images/homepage.jpg");
 }
 
+.screen--market {
+  background-image: url("images/home-market.jpg");
+}
+
 .screen--waterfront {
   background-image: url("images/home-waterfront.jpg");
 }
 
-.screen--neighborhoods {
-  background-image: url("images/home-neighborhoods.jpg");
+/* Card 4: Nick stands left of center, so the text sits on the right. */
+.screen--nick {
+  justify-content: flex-end;
+  text-align: left;
+  background-image: url("images/home-nick.jpg");
+  background-position: 38% 25%;
 }
 
-.screen--nick {
-  background-image: url("images/home-nick.jpg");
+.screen--nick::before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 28%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.25) 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.screen--nick .screen__content {
+  max-width: min(600px, 46%);
+}
+
+.screen--nick h2 {
+  font-size: clamp(2rem, 1.2rem + 2.6vw, 3.6rem);
+}
+
+.screen--nick .lede {
+  margin-inline: 0;
+}
+
+.screen--nick .btn-row {
+  justify-content: flex-start;
+}
+
+.screen__subtitle {
+  margin: 1rem 0 0;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
 }
 
 .screen__content {
@@ -998,12 +1035,6 @@ html:has(.screens) {
   justify-content: center;
 }
 
-.screen__divider {
-  display: inline-block;
-  margin: 0 0.4em;
-  opacity: 0.6;
-}
-
 .site-footer {
   scroll-snap-align: end;
 }
@@ -1017,11 +1048,46 @@ html:has(.screens) {
   .screen .btn-row .btn {
     width: min(100%, 20rem);
   }
+}
 
-  .screen__divider {
-    display: block;
-    height: 0;
-    overflow: hidden;
+/* Narrow or portrait screens: vertical photo, text below his face. */
+@media (max-width: 900px), (orientation: portrait) {
+  .screen--nick {
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    background-image: url("images/home-nick-tall.jpg");
+    background-position: center 30%;
+  }
+
+  .screen--nick::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0.1) 42%, rgba(0, 0, 0, 0.82) 72%, rgba(0, 0, 0, 0.9) 100%);
+  }
+
+  .screen--nick .screen__content {
+    max-width: 920px;
+  }
+
+  .screen--nick .lede {
+    margin-inline: auto;
+  }
+
+  .screen--nick .btn-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .screen--nick {
+    padding-bottom: 2.5rem;
+  }
+
+  .screen--nick .eyebrow {
+    display: none;
+  }
+
+  .screen--nick h2 {
+    font-size: 2rem;
   }
 }
 
@@ -1119,6 +1185,53 @@ html:has(.screens) {
 
   .feature--flip .feature__media {
     order: 0;
+  }
+}
+
+/* Editorial text: two-column split, readable prose and pull quotes. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.split .section-head {
+  margin-bottom: 0;
+}
+
+.prose {
+  max-width: 66ch;
+}
+
+.prose p {
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pullquote {
+  margin: 0 0 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.75rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1639,8 +1752,7 @@ html:has(.screens) {
 
 @media (forced-colors: active) {
   .glass-panel,
-  .btn,
-  .chip {
+  .btn {
     border: 1px solid CanvasText;
   }
 

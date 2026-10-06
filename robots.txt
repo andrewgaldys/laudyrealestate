@@ -1,4 +1,4 @@
-# robots.txt for https://www.yourdomain.com
+# robots.txt for https://laudyrealestate.com
 # Every page on this site may be crawled by search engines and AI systems.
 
 # --- Default: all crawlers -------------------------------------------------
@@ -39,4 +39,4 @@ User-agent: Meta-ExternalAgent
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://laudyrealestate.com/sitemap.xml

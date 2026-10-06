@@ -1,54 +1,61 @@
-# Nick Napoli: Fort Lauderdale Waterfront Real Estate
+# Nicholas Napoli, Esq. | laudyrealestate.com
 
-A static site (HTML and CSS, no JavaScript, no build step) for GitHub Pages.
+A static site (HTML and CSS, no JavaScript, no build step) hosted on GitHub Pages from the `laudyrealestate` repository.
 
 ```
-index.html          Home
-waterfront.html     Boating Access Guide
+index.html          Home (four full-screen cards)
+about.html          About Nicholas (his own bio)
 neighborhoods.html  Neighborhood comparison
-about.html          About Nick
+waterfront.html     Boating Access Guide
 style.css           All styles
-robots.txt          Allows search engines and AI crawlers
+robots.txt          Allows search engines and AI crawlers (including OAI-SearchBot)
 sitemap.xml         The four pages
+CNAME               Custom domain for GitHub Pages. Keep this file.
 favicon.svg
-images/             Photos (labeled placeholders until replaced)
+images/             Photos
 ```
 
 ## Publish changes
 
-GitHub → your repository → **Add file → Upload files** → drag in the changed files → **Commit changes**. The live site updates in 1–2 minutes.
+GitHub → `laudyrealestate` → **Add file → Upload files** → drag in the changed files → **Commit changes**. The live site updates in 1–2 minutes.
 
-## Still to replace
+## HTTPS (one-time fix)
 
-| Placeholder | Where |
-|---|---|
-| `yourdomain.com` | Every page, robots.txt, sitemap.xml |
+`https://laudyrealestate.com` currently fails because GitHub never issued a certificate for the domain.
 
-## Images
+1. GitHub → `laudyrealestate` → **Settings → Pages**.
+2. Under **Custom domain**, click **Remove**. Then type `laudyrealestate.com` again and click **Save**.
+3. Wait for "DNS check successful" and for the certificate (minutes, sometimes up to 24 hours).
+4. Tick **Enforce HTTPS**.
 
-Replace any photo by saving a new one **with the same file name** into `images/`. No code changes needed. Use JPEG, ideally under 1 MB.
+Recommended at GoDaddy (DNS): point `www` (CNAME) to `andrewgaldys.github.io`.
 
-| File | Shape | Used on |
+## Photos
+
+Replace any photo by saving a new one **with the same file name** into `images/`. Use JPEG, ideally under 1 MB and about 2400 px wide for full-screen images.
+
+| File | Used on | Source |
 |---|---|---|
-| `homepage.jpg` | Wide | Home hero (real photo) |
-| `tile-ocean-access.jpg`, `tile-bridge-clearance.jpg`, `tile-deepwater-dockage.jpg`, `tile-seawall.jpg` | Tall (3:4) | Home tiles |
-| `guide-neighborhoods-card.jpg`, `guide-waterfront-card.jpg` | Any | Home image/text blocks |
-| `contact-dusk.jpg` | Wide | Contact band, every page |
-| `waterfront-hero-drone.jpg` | Wide | Waterfront hero |
-| `waterfront-bridges.jpg`, `waterfront-frontage.jpg` | Tall (4:5) | Waterfront image/text blocks |
-| `neighborhoods-hero-drone.jpg` | Wide | Neighborhoods hero |
-| `las-olas-isles-aerial.jpg`, `harbor-beach-aerial.jpg`, `coral-ridge-aerial.jpg`, `rio-vista-aerial.jpg`, `victoria-park-streetscape.jpg` | Landscape | Neighborhood profiles |
-| `nick-napoli-hero.jpg` | Wide, Nick on the right | About hero |
-| `about-hero-intracoastal.jpg` | Any | About "Approach" block |
-| `nick-napoli-portrait.jpg` | 4:5 | Search-engine profile data only |
-| `og-image.jpg` | 1200×630 | Social share preview |
+| `homepage.jpg` | Home card 1 | Drone aerial |
+| `home-market.jpg` | Home card 2 | Downtown drone still, Sep 28 |
+| `home-waterfront.jpg` | Home card 3 | Intracoastal drone aerial |
+| `home-nick.jpg` / `home-nick-tall.jpg` | Home card 4 (desktop / phones) | Portraits rDF9_7826 / rDF9_7828 |
+| `nick-napoli-hero.jpg` / `nick-napoli-hero-tall.jpg` | About hero (desktop / phones) | Portraits rDF9_7796 / rDF9_7836 |
+| `nick-napoli-portrait.jpg` | About, search-engine profile image | Portrait rDF9_7828 |
+| `about-market.jpg` | About, Market Knowledge | Downtown drone still |
+| `about-development.jpg` | About, Development | Hendricks Isle spec project drone still |
+| `contact-dusk.jpg` | Contact section on inner pages | Downtown at sunset |
+| `neighborhoods-hero-drone.jpg` | Neighborhoods hero | Downtown drone still |
+| `las-olas-isles-aerial.jpg` | Las Olas Isles profile | 97 Hendricks Isle listing |
+| `waterfront-hero-drone.jpg` | Waterfront hero | 1701 12th Court listing |
+| `waterfront-bridges.jpg`, `waterfront-frontage.jpg` | Waterfront guide | 525 Isle of Capri, 97 Hendricks Isle listings |
+| `harbor-beach-aerial.jpg`, `coral-ridge-aerial.jpg`, `rio-vista-aerial.jpg`, `victoria-park-streetscape.jpg` | Neighborhood profiles | **Still placeholders** |
+| `og-image.jpg` | Link preview (1200×630) | Crop of `homepage.jpg` |
 
 If a new photo shows something different, update its `alt` text in the HTML.
 
-## Content review
+## Content
 
-Search the HTML for `VERIFY`: those lines describe Nick's practice and need his sign-off. Publish only checkable facts on the About page. The guide figures are current as of September 30, 2026; recheck them when you update the "Reviewed" date.
-
-## robots.txt
-
-All crawlers are allowed. To stay in AI search but opt out of AI model training, change `Allow: /` to `Disallow: /` in the training-crawler group (deleting the group would not block them).
+- The About page is Nicholas's own text. Edit it there, not in a summary.
+- "Inquire Now" opens a pre-filled email to nicknapolire@gmail.com.
+- The Waterfront guide figures are current as of September 30, 2026; recheck them when you update its "Reviewed" date.
