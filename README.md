@@ -1,21 +1,45 @@
 # Nicholas Napoli, Esq. | laudyrealestate.com
 
-A static site (HTML and CSS, no JavaScript, no build step) hosted on GitHub Pages from the `laudyrealestate` repository, served over HTTPS.
+A static site (HTML and CSS, no JavaScript, no build step) hosted on GitHub Pages from the `laudyrealestate` repository, served over HTTPS. This README and `_notes/` are excluded from the published site by `_config.yml`.
 
 ```
-index.html          /               Home (four full-screen cards)
-about.html          /about          Nicholas's own bio
-neighborhoods.html  /neighborhoods  Five neighborhoods
-waterfront.html     /waterfront     Boating Access Guide
-style.css           All styles
-video/              Home card 1 clip (1080p and a 720p version for phones)
-images/             Photos
-robots.txt          Allows search engines and AI crawlers (including OAI-SearchBot)
-sitemap.xml         The four pages
-CNAME               Custom domain for GitHub Pages. Keep this file.
+index.html            /                 Home (four full-screen cards, video first)
+explore.html          /explore          Hub for guides, history and press (to flesh out)
+waterfront.html       /waterfront       Waterfront buyer's guide
+neighborhoods.html    /neighborhoods    How to choose your neighborhood
+las-olas-isles.html   /las-olas-isles   Neighborhood guides (5 pages)
+harbor-beach.html     /harbor-beach
+coral-ridge.html      /coral-ridge
+rio-vista.html        /rio-vista
+victoria-park.html    /victoria-park
+history.html          /history          Archive photographs
+about.html            /about            Bio, transactions, reviews, press (/about#press)
+style.css             All styles
+video/                Home loop (1080p and 720p) and the Las Olas Isles banner
+images/               Photos; images/history/ holds the archive photographs
+robots.txt            Allows search engines and AI crawlers
+sitemap.xml           Published, indexable pages only
+CNAME                 Custom domain for GitHub Pages. Keep this file.
+_config.yml           Keeps README.md and _notes/ off the live site
+_notes/               Handoff notes and the market-report proposal (not published)
 ```
 
 GitHub Pages serves `about.html` at `/about`, so links never include `.html`.
+
+## Navigation
+
+Every page shares one header: Explore, Waterfront, Neighborhoods (dropdown), the name, History, About and Contact.
+- At 1440 px and wider, three links sit on each side of the name.
+- Narrower screens show the name with one row of links beneath it.
+- Phones show two rows of three.
+
+The Neighborhoods dropdown opens on hover or keyboard focus. On a phone, the first tap opens it.
+
+When adding a page, copy the header from an existing page and add the link to the header and footer.
+
+## Draft content
+
+Dashed boxes labeled "Draft" mark copy Nick still needs to write or approve. Pages that are mostly drafts are `noindex` and left out of `sitemap.xml`. See `_notes/HANDOFF.md` for the full list and the steps to publish a page.
 
 ## Publish changes
 
@@ -23,32 +47,26 @@ GitHub → `laudyrealestate` → **Add file → Upload files** → drag in the c
 
 ## Photos and video
 
-Replace any photo by saving a new one **with the same file name** into `images/`. Use JPEG, ideally under 1 MB and about 2400 px wide for full-screen images. If a new photo shows something different, update its `alt` text in the HTML.
+Replace any photo by saving a new one **with the same file name** into `images/`. Use JPEG, ideally under 1 MB and about 2400 px wide for full-screen images. If a new photo shows something different, update its `alt` text.
 
 | File | Used on |
 |---|---|
-| `video/home-canal.mp4`, `video/home-canal-720.mp4`, `images/home-canal-poster.jpg` | Home card 1: a 19-second loop that crossfades between the Sep 22 canal flight and a slow Jul 1 push across the Intracoastal toward the beach |
-| `home-market.jpg` | Home card 2 |
-| `home-waterfront.jpg` | Home card 3 |
-| `home-nick.jpg` / `home-nick-tall.jpg` | Home card 4 (desktop / phones) |
-| `nick-napoli-hero.jpg` / `nick-napoli-hero-tall.jpg` | About hero (desktop / phones) |
-| `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About page |
-| `nick-napoli-portrait.jpg` | Search-engine and link-preview profile image |
-| `neighborhoods-hero-drone.jpg` | Neighborhoods hero |
-| `las-olas-isles-aerial.jpg` | Las Olas Isles (97 Hendricks Isle) |
-| `harbor-beach-aerial.jpg` | Harbor Beach (Lucille Island) |
-| `waterfront-hero-drone.jpg`, `waterfront-bridges.jpg`, `waterfront-frontage.jpg`, `waterfront-seawall.jpg` | Boating Access Guide |
-| `contact-dusk.jpg` | "Let's Talk" section on inner pages |
-| `og-image.jpg` | Link preview (1200×630) |
+| `video/home-canal.mp4`, `video/home-canal-720.mp4`, `images/home-canal-poster.jpg` | Home card 1: the canal flight crossfading into a slow push across the Intracoastal |
+| `home-market.jpg`, `home-waterfront.jpg`, `home-nick.jpg`, `home-nick-tall.jpg` | Home cards 2–4; Explore banner |
+| `video/las-olas-isles.mp4`, `images/las-olas-isles-poster.jpg` | Las Olas Isles banner (Hendricks Isle, Jul 1 drone footage) |
+| `las-olas-isles-aerial.jpg`, `harbor-beach-aerial.jpg` | Neighborhood tiles; Harbor Beach banner |
+| `nick-napoli-hero.jpg`, `nick-napoli-hero-tall.jpg`, `about-portrait-tall.jpg` | About hero and the vertical portrait beside the legal paragraph |
+| `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About; `about-development.jpg` also on Waterfront (Setbacks) |
+| `press-lifestyle-1..3.jpg` | About, Press (Lifestyle Magazine pages) |
+| `history/*.jpg` | History (History Fort Lauderdale archive; permission pending) |
+| `waterfront-*.jpg`, `neighborhoods-hero-drone.jpg`, `contact-dusk.jpg`, `og-image.jpg` | Waterfront, Neighborhoods, contact sections, link previews |
 
-Coral Ridge, Rio Vista and Victoria Park have no verified photos yet, so they appear as text. Add a photo of each and they can become full-screen sections like Las Olas Isles and Harbor Beach.
+## Content rules
 
-## Content
-
-- The About page is Nicholas's own text.
+- The About page bio is Nicholas's own text.
+- No historical claims, prices, statistics, reviews or sales figures go live without a checked source and Nick's approval.
 - "Inquire Now" opens a pre-filled email to nicknapolire@gmail.com.
-- The Boating Access Guide figures are current as of September 30, 2026; recheck them when you update the "reviewed" date.
 
 ## Domain
 
-HTTPS is enforced; the certificate renews automatically. Optional at GoDaddy (DNS): point `www` (CNAME) to `andrewgaldys.github.io` so `https://www.laudyrealestate.com` is covered too.
+HTTPS is enforced and the certificate renews automatically. Optional, at GoDaddy (DNS): point `www` (CNAME) to `andrewgaldys.github.io` so `https://www.laudyrealestate.com` is covered too.

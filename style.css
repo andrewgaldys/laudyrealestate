@@ -14,13 +14,18 @@
    6. Header & navigation
    7. Inner-page hero
    8. Home: full-screen cards
-   9. Chapters: full-screen photos with one line of text
-   10. Figures: a row of large numbers
-   11. Editorial: statement, essay, photo band, photo pair
-   12. Lists: neighborhood trio, checklist, sources
-   13. Contact band
-   14. Footer
-   15. Preference & fallback queries
+   9. Chapters
+   10. Editorial
+   11. Lists
+   12. Contact band
+   13. Footer
+   14. Banner
+   15. Draft placeholders
+   16. Tiles
+   17. Neighborhood page text
+   18. Archive gallery (History) and press pages (About)
+   19. About
+   20. Preference & fallback queries
    ========================================================================== */
 
 /* 1. Tokens
@@ -184,11 +189,6 @@ a:hover {
   color: var(--text);
 }
 
-.note {
-  font-size: 0.875rem;
-  color: var(--text-faint);
-}
-
 /* 3. Accessibility helpers
    ========================================================================== */
 
@@ -302,12 +302,6 @@ main:focus {
   color: var(--navy-950);
 }
 
-.btn--sm {
-  min-height: 44px;
-  padding: 0.7rem 1.7rem;
-  font-size: 0.72rem;
-}
-
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -317,17 +311,12 @@ main:focus {
   list-style: none;
 }
 
-.btn-row--center {
-  justify-content: center;
-}
-
 /* 6. Header & navigation
    ========================================================================== */
 
-/* Fixed, transparent header: split navigation around a centered name.
-   At the top of a page it is fully transparent. Once the page scrolls, a
-   soft top-down fade (not a solid bar) fades in so the links stay legible
-   over content passing underneath. */
+/* Fixed, transparent header. Wide screens: three links either side of the
+   centered name. Narrower screens: one row of links beneath the name.
+   A soft fade appears behind it once the page scrolls. */
 .site-header {
   position: fixed;
   top: 0;
@@ -363,17 +352,19 @@ main:focus {
 }
 
 .site-nav {
+  --nav-gap: clamp(1.25rem, 1.7vw, 2.4rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   grid-template-areas: "left logo right";
   align-items: center;
-  gap: 2rem;
+  column-gap: 2rem;
   min-height: var(--header-h);
 }
 
 .site-nav__group {
   display: flex;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  gap: var(--nav-gap);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -393,20 +384,21 @@ main:focus {
   display: inline-block;
   padding: 0.6rem 0;
   font-family: var(--font-display);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 2.5px;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--white);
   text-decoration: none;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
-.site-nav__group a::after {
+.site-nav__group > li > a::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 2.5px; /* trailing letter-spacing */
+  right: 2.2px; /* trailing letter-spacing */
   bottom: 0.2rem;
   height: 1px;
   background: currentColor;
@@ -415,9 +407,71 @@ main:focus {
   transition: transform 0.35s ease;
 }
 
-.site-nav__group a:hover::after,
-.site-nav__group a[aria-current="page"]::after {
+.site-nav__group > li > a:hover::after,
+.site-nav__group > li > a[aria-current="page"]::after,
+.site-nav__group > li > a.is-current::after {
   transform: scaleX(1);
+}
+
+/* Neighborhoods dropdown: opens on hover or keyboard focus, no JavaScript.
+   On touch screens the first tap opens it; the link itself goes to the
+   overview page, which also lists every neighborhood. */
+.nav-drop {
+  position: relative;
+}
+
+.nav-drop__caret {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 0.5rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-3px) rotate(45deg);
+}
+
+.nav-drop__menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 10;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.6rem 0;
+  list-style: none;
+  background: rgba(3, 7, 14, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.nav-drop:hover .nav-drop__menu,
+.nav-drop:focus-within .nav-drop__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-drop__menu a {
+  display: block;
+  padding: 0.65rem 1.4rem;
+  text-shadow: none;
+}
+
+.nav-drop__menu a:hover,
+.nav-drop__menu a:focus-visible,
+.nav-drop__menu a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-drop__menu li:first-child a {
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Centered name. Padding on the left balances the trailing letter-spacing
@@ -443,7 +497,8 @@ main:focus {
   color: var(--white);
 }
 
-@media (max-width: 1100px) {
+/* Below this width the split no longer fits: name on top, one row of links. */
+@media (max-width: 1439px) {
   :root {
     --header-h: 112px;
   }
@@ -453,19 +508,63 @@ main:focus {
     grid-template-areas:
       "logo logo"
       "left right";
-    gap: 0.35rem 1rem;
+    column-gap: var(--nav-gap);
+    row-gap: 0.3rem;
     min-height: 0;
     padding-top: 1rem;
   }
 
-  .site-nav__group {
-    gap: 1.25rem;
+  .site-nav__group--left {
+    justify-content: flex-end;
+  }
+
+  .site-nav__group--right {
+    justify-content: flex-start;
   }
 
   .site-nav__group a {
-    padding: 0.75rem 0;
+    padding: 0.7rem 0;
     font-size: 0.68rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
+  }
+}
+
+/* Phones: three links per row, both rows centered under the name. */
+@media (max-width: 640px) {
+  :root {
+    --header-h: 136px;
+  }
+
+  .site-nav {
+    --nav-gap: 1.15rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "logo"
+      "left"
+      "right";
+    row-gap: 0;
+  }
+
+  .site-nav__group--left,
+  .site-nav__group--right {
+    justify-content: center;
+  }
+
+  .site-nav__group a {
+    padding: 0.55rem 0;
+    font-size: 0.66rem;
+    letter-spacing: 1.4px;
+  }
+
+  .nav-drop__menu {
+    left: auto;
+    right: -1rem;
+    transform: translateY(6px);
+  }
+
+  .nav-drop:hover .nav-drop__menu,
+  .nav-drop:focus-within .nav-drop__menu {
+    transform: translateY(0);
   }
 }
 
@@ -473,17 +572,6 @@ main:focus {
   .wordmark {
     --logo-track: 3.5px;
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .site-nav__group {
-    gap: 0.9rem;
-  }
-
-  .site-nav__group a {
-    font-size: 0.64rem;
-    letter-spacing: 1px;
   }
 }
 
@@ -639,7 +727,7 @@ main:focus {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0) 72%, var(--bg) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 22%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0) 72%, var(--bg) 100%);
   }
 
   .hero--portrait .hero__media {
@@ -979,42 +1067,7 @@ html:has(.screens) {
   }
 }
 
-/* 10. Figures: a row of large numbers
-   ========================================================================== */
-.figures {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.figure__value {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 2rem + 3.6vw, 5.75rem);
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: 1px;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.figure__label {
-  max-width: 22ch;
-  margin: 1.1rem 0 0;
-  font-size: 0.98rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 900px) {
-  .figures {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* 11. Editorial: statement, essay, photo band, photo pair
+/* 10. Editorial: statement, essay, photo band, photo pair
    ========================================================================== */
 .statement {
   max-width: 24ch;
@@ -1093,44 +1146,8 @@ html:has(.screens) {
   }
 }
 
-/* 12. Lists: neighborhood trio, checklist, sources
+/* 11. Lists: checklist, sources
    ========================================================================== */
-.trio {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(3rem, 5vw, 5rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.trio h2 {
-  margin: 0 0 1rem;
-  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.2rem);
-  font-weight: 300;
-  letter-spacing: 3px;
-}
-
-.trio p {
-  margin: 0;
-}
-
-.trio .facts {
-  flex-direction: column;
-  margin-top: 1.5rem;
-  color: var(--text);
-}
-
-.trio .facts li + li::before {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .trio {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
 .checklist {
   max-width: 920px;
   margin: 0;
@@ -1194,7 +1211,7 @@ html:has(.screens) {
   }
 }
 
-/* 13. Contact band
+/* 12. Contact band
    ========================================================================== */
 .band {
   position: relative;
@@ -1248,7 +1265,7 @@ html:has(.screens) {
   justify-content: center;
 }
 
-/* 14. Footer
+/* 13. Footer
    ========================================================================== */
 .site-footer {
   padding-block: clamp(5rem, 9vw, 7rem) 2.5rem;
@@ -1349,7 +1366,428 @@ html:has(.screens) {
   }
 }
 
-/* 15. Preference & fallback queries
+/* 14. Banner: a shorter hero for neighborhood and section pages
+   ========================================================================== */
+.banner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 64vh;
+  min-height: 64svh;
+  padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 8vh, 5rem);
+  overflow: hidden;
+  color: var(--white);
+  background: #05080f;
+}
+
+.banner--plain {
+  background:
+    radial-gradient(70% 90% at 15% 100%, rgba(36, 80, 143, 0.35), transparent 70%),
+    radial-gradient(60% 80% at 100% 0%, rgba(36, 80, 143, 0.2), transparent 70%),
+    #05080f;
+}
+
+.banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: transparent;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.banner--plain::before {
+  display: none;
+}
+
+.banner :is(h1, p, a) {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 1.2rem + 4vw, 5rem);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.banner .lede {
+  max-width: 44ch;
+  margin: 1.25rem 0 0;
+}
+
+.backlink {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.backlink:hover {
+  text-decoration: underline;
+}
+
+/* 15. Draft placeholders: visible markers for copy Nick still needs to supply
+   ========================================================================== */
+.placeholder {
+  max-width: 62ch;
+  padding: 1.4rem 1.6rem;
+  border: 1px dashed rgba(255, 255, 255, 0.38);
+  color: var(--text-soft);
+}
+
+.placeholder--center {
+  margin-inline: auto;
+}
+
+.placeholder__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.placeholder p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+:is(.checklist, .press) + .placeholder {
+  margin-top: 2.5rem;
+}
+
+.chapter .placeholder {
+  margin-top: 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+}
+
+/* 16. Tiles: linked cards with a photo or a plain dark field
+   ========================================================================== */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  min-height: 22rem;
+  overflow: hidden;
+  color: var(--white);
+  text-decoration: none;
+  background:
+    radial-gradient(80% 80% at 20% 100%, rgba(36, 80, 143, 0.4), transparent 70%),
+    var(--bg-raised);
+}
+
+.tile__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: transparent;
+  transition: transform 1.2s ease;
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.tile:hover .tile__media,
+.tile:focus-visible .tile__media {
+  transform: scale(1.04);
+}
+
+.tile__body {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.tile__title {
+  margin: 0;
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.tile__line {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 17. Neighborhood page text: at a glance, character, pros and cons
+   ========================================================================== */
+.reading {
+  max-width: 760px;
+}
+
+.reading > h2 {
+  margin: clamp(3.5rem, 7vw, 5rem) 0 1.5rem;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  font-weight: 300;
+}
+
+.reading > h2:first-child {
+  margin-top: 0;
+}
+
+.glance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  margin: 0;
+  padding: 1.25rem 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.procon {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.procon h3 {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  color: var(--sea);
+}
+
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.related a:hover,
+.related a:focus-visible {
+  background: #ffffff;
+  color: var(--navy-950);
+}
+
+@media (max-width: 700px) {
+  .procon {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* 18. Archive gallery (History) and press pages (About)
+   ========================================================================== */
+.archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive figure {
+  margin: 0;
+}
+
+.archive a {
+  display: block;
+}
+
+.archive img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #111;
+}
+
+.archive figcaption,
+.press figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.archive__id {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.credit {
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.press {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.press figure {
+  margin: 0;
+}
+
+.press img {
+  width: 100%;
+  aspect-ratio: 17 / 22;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 800px) {
+  .press {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 420px;
+  }
+}
+
+/* 19. About: transactions, portrait pairing, hero link
+   ========================================================================== */
+.deals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deal h3 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 900px) {
+  .deals {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.pair figure {
+  margin: 0;
+}
+
+.pair img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.pair .essay {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pair figure {
+    max-width: 480px;
+  }
+}
+
+.hero__link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-nav);
+  text-transform: uppercase;
+}
+
+.disclaimer {
+  max-width: 70ch;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+/* 20. Preference & fallback queries
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1364,7 +1802,8 @@ html:has(.screens) {
 
   /* Background video gives way to its poster image. */
   .screen__video,
-  video.hero__media {
+  video.hero__media,
+  video.banner__media {
     display: none;
   }
 }
@@ -1389,6 +1828,8 @@ html:has(.screens) {
   .hero__scroll,
   .screen__video,
   .chapter__media,
+  .banner__media,
+  .tile__media,
   .photo-band,
   .duo {
     display: none !important;
