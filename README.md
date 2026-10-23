@@ -57,6 +57,7 @@ Replace any photo by saving a new one **with the same file name** into `images/`
 | `las-olas-isles-aerial.jpg`, `harbor-beach-aerial.jpg` | Neighborhood tiles; Harbor Beach banner |
 | `nick-napoli-hero.jpg`, `nick-napoli-hero-tall.jpg`, `about-portrait-tall.jpg` | About hero and the vertical portrait beside the legal paragraph |
 | `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About; `about-development.jpg` also on Waterfront (Setbacks) |
+| `featured-coral-ridge.jpg`, `featured-solemar.jpg`, `featured-luna.jpg` | About, Featured Transactions; Coral Ridge also on the Explore tile |
 | `press-lifestyle-1..3.jpg` | About, Press (Lifestyle Magazine pages) |
 | `history/*.jpg` | History (History Fort Lauderdale archive; permission pending) |
 | `waterfront-*.jpg`, `neighborhoods-hero-drone.jpg`, `contact-dusk.jpg`, `og-image.jpg` | Waterfront, Neighborhoods, contact sections, link previews |
