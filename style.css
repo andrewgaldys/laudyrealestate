@@ -1104,6 +1104,32 @@ html:has(.screens) {
   margin-bottom: 0;
 }
 
+.essay ul {
+  margin: 0 0 1.6em;
+  padding-left: 1.25em;
+}
+
+.essay li {
+  margin-bottom: 0.5em;
+  padding-left: 0.25em;
+  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.essay li::marker {
+  color: var(--sea);
+}
+
+/* A bold lead-in line ("Before you buy:") sits close to the list it introduces. */
+.essay p:has(+ ul) {
+  margin-bottom: 0.75em;
+}
+
+.essay strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
 .photo-band {
   height: 82vh;
   min-height: 22rem;
@@ -1164,6 +1190,18 @@ html:has(.screens) {
   padding: 1.05rem 0;
   border-bottom: 1px solid var(--line);
   break-inside: avoid;
+  color: var(--text);
+}
+
+/* Checklist items with a bold lead and a short explanation. */
+.checklist--detail li {
+  color: var(--text-soft);
+}
+
+.checklist--detail strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
   color: var(--text);
 }
 

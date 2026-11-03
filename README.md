@@ -14,14 +14,16 @@ rio-vista.html        /rio-vista
 victoria-park.html    /victoria-park
 history.html          /history          Archive photographs
 about.html            /about            Bio, transactions, reviews, press (/about#press)
+legal.html            /legal            Full legal notice (short version is in every footer)
 style.css             All styles
 video/                Home loop (1080p and 720p) and the Las Olas Isles banner
 images/               Photos; images/history/ holds the archive photographs
 robots.txt            Allows search engines and AI crawlers
 sitemap.xml           Published, indexable pages only
 CNAME                 Custom domain for GitHub Pages. Keep this file.
+fe3a30e6…274c.txt     IndexNow key (tells Bing about page updates). Keep this file.
 _config.yml           Keeps README.md and _notes/ off the live site
-_notes/               Handoff notes and the market-report proposal (not published)
+_notes/               Handoff notes, the AI-visibility plan and the market-report proposal (not published)
 ```
 
 GitHub Pages serves `about.html` at `/about`, so links never include `.html`.
@@ -56,7 +58,8 @@ Replace any photo by saving a new one **with the same file name** into `images/`
 | `video/las-olas-isles.mp4`, `images/las-olas-isles-poster.jpg` | Las Olas Isles banner (Hendricks Isle, Jul 1 drone footage) |
 | `las-olas-isles-aerial.jpg`, `harbor-beach-aerial.jpg` | Neighborhood tiles; Harbor Beach banner |
 | `nick-napoli-hero.jpg`, `nick-napoli-hero-tall.jpg`, `about-portrait-tall.jpg` | About hero and the vertical portrait beside the legal paragraph |
-| `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About; `about-development.jpg` also on Waterfront (Setbacks) |
+| `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About |
+| `waterfront-setbacks.jpg` | Waterfront (Setbacks); same Hendricks Isle photo as `about-development.jpg`, full width |
 | `featured-coral-ridge.jpg`, `featured-solemar.jpg`, `featured-luna.jpg` | About, Featured Transactions; Coral Ridge also on the Explore tile |
 | `press-lifestyle-1..3.jpg` | About, Press (Lifestyle Magazine pages) |
 | `history/*.jpg` | History (History Fort Lauderdale archive; permission pending) |

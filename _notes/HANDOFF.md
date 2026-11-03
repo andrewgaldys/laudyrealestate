@@ -8,7 +8,7 @@ For Nick and Andrew. These notes live in the repository but are **not published*
 |---|---|---|
 | Home | `/` | Ready. New line: "Local Authority. Legal Insight. Concierge Service." |
 | Explore | `/explore` | Hub for later expansion. `noindex` until it has its own content. |
-| Waterfront | `/waterfront` | Restructured; **needs Nick's copy** in six places. |
+| Waterfront | `/waterfront` | Ready. Nick's final copy and sources are in (November 2, 2026). |
 | Neighborhoods: How to Choose | `/neighborhoods` | Needs Nick's intro. |
 | Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista, Victoria Park | `/las-olas-isles` etc. | New. `noindex`; need character, pros and cons. |
 | History | `/history` | New. `noindex`; **hold until archive permission is confirmed.** |
@@ -20,7 +20,7 @@ Dashed boxes labeled "Draft" mark every spot that needs copy or a decision. Page
 
 ## Copy Nick needs to write or approve
 
-- **Waterfront:** Why Waterfront Matters; Depth at High Tide; Canal Width & Distance; Setbacks; Seawall Inspections; the questions he asks on every showing. Confirm or replace the carried-over "Questions to Ask" list. Keep it informational; the page states it is not legal advice.
+- **Waterfront:** done (November 2). Nick's "Final Page Copy" is used word for word, with his source links. Figures reviewed November 2, 2026; recheck them at least once a year.
 - **How to Choose:** his intro.
 - **Each neighborhood page:** Character, Pros, Cons. Confirm every "At a Glance" line (list below).
 - **History:** introduction is in ("I’m a good realtor."). Any added text needs a cited source for dates, names or prices.
@@ -42,12 +42,12 @@ Dashed boxes labeled "Draft" mark every spot that needs copy or a decision. Page
   - Coral Ridge: "Established streets from Sunrise to Oakland Park Boulevard" · Dockage varies by canal · Generous lots · Shops on Federal Highway
   - Rio Vista: "Between the New River and the Intracoastal" · Three waterways · Minutes from downtown · Compact to estate lots
   - Victoria Park: "Walkable streets just northeast of downtown" · Walk to Las Olas · Mostly dry lots · Townhome infill
-- **Waterfront figures**, last reviewed September 30, 2026, with sources listed on the page: 17th Street Causeway bridge 55 ft closed; New River rail bridge 4 ft closed; dock reach 25 ft or 25% of waterway (ULDR §47-19.3); Broward seawall 4 ft NAVD88 minimum before 2035 and 5 ft by 2050.
+- **Waterfront figures** are Nick's, reviewed November 2, 2026, with sources listed on the page.
 - **History captions** are the archive's own titles, dates and catalog numbers, credited to History Fort Lauderdale. "Cole Hammock" is the archive's spelling (the neighborhood is Colee Hammock). One Rio Vista image (`rio-vista-1928.jpg`) has no catalog number on the contact sheet.
 - **Lifestyle Magazine:** confirm the exact publication name, issue and date.
 - **Featured Transactions** (from Nick's Zillow profile, October 23, 2026): Coral Ridge, Fort Lauderdale (2898 NE 26th St), $7,250,000, 5 bed, 5.5 bath, 4,690 sq ft, represented the buyer, sold April 2026 (BEX Realty shows April 10, 2026); Solemar, Pompano Beach (1116 N Ocean Blvd #1801), $3,375,000, 3 bed, 3.5 bath, 2,428 sq ft, represented the seller, sold August 3, 2026. Zillow counts half baths as full (6 and 4); the cards use the listing counts. The site shows the neighborhood or building, not the street address. Luna is still a draft. Nick should confirm each line and that the brokerage and clients are fine with it.
 - **Client reviews** are copied word for word from Zillow (NoahSimon4, June 2022; brittanyj 399, February 2022; Anna Koontz, February 2022), with a link to the profile. Zillow's terms limit reusing its content, so Nick may prefer Zillow's own review badge or the reviewers' permission. One review says he is "relatively new to the real estate game"; it is kept verbatim.
-- **"Esq." on a real estate site:** Nick should confirm it fits Florida Bar advertising rules. The footer already states that legal representation requires a separate engagement.
+- **"Esq." on a real estate site:** Nick wrote the legal notice. The short version is in every page's footer, and the full version is at `/legal` (linked from the footer, `noindex`).
 - **Optional:** the magazine lists the office as 1700 E Las Olas Blvd, Ste 206, Fort Lauderdale, FL 33301. It is not on the site; add it to the footer and structured data only if Nick wants it there.
 
 ## Newspaper clippings
