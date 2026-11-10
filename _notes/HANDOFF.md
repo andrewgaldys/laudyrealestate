@@ -98,5 +98,6 @@ Each page has a descriptive title, a single H1, internal links and crawlable tex
   - Four photos were on both sheets as different scans; the sharper scan is used.
 - **No catalog number:** "Aerial looking east with river forks c.1940" (credited to History Fort Lauderdale with no number).
 - **Source unknown:** the labeled aerial of the North and South Forks (yellow outlines naming Riverside, Sailboat Bend and the Tarpon River neighborhood). Andrew sent it separately with no date or catalog number, so it shows no credit. Confirm it's from History Fort Lauderdale too.
+- Removed November 10 at Andrew's request: "Seminole Indian Poling His Canoe Up New River" (5-8435), in case it gave offense.
 - **Permission:** Andrew confirmed on November 10 that the photos can be used, including the labeled aerial. `/history` is now indexed and in the sitemap.
 
