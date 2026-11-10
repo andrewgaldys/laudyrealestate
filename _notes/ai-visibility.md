@@ -61,3 +61,5 @@ Ask ChatGPT, Gemini, Claude and Perplexity the same five questions on the first 
 5. Who is Nicholas Napoli, Fort Lauderdale realtor?
 
 The cited sources show where to get listed next. Expect months, not weeks.
+
+November 9: the five neighborhood guides and How to Choose are now indexed and in the sitemap, each with cited sources.

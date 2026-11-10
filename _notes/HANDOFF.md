@@ -7,10 +7,10 @@ For Nick and Andrew. These notes live in the repository but are **not published*
 | Page | URL | Status |
 |---|---|---|
 | Home | `/` | Ready. New line: "Local Authority. Legal Insight. Concierge Service." |
-| Explore | `/explore` | Hub for later expansion. `noindex` until it has its own content. |
+| Explore | `/explore` | Hub for later expansion. `noindex` until it has its own content. The "planned additions" draft box was removed November 9. |
 | Waterfront | `/waterfront` | Ready. Nick's final copy and sources are in (November 2, 2026). |
-| Neighborhoods: How to Choose | `/neighborhoods` | Needs Nick's intro. |
-| Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista, Victoria Park | `/las-olas-isles` etc. | New. `noindex`; need character, pros and cons. |
+| Neighborhoods: How to Choose | `/neighborhoods` | Ready (November 9): intro, comparison table and questions, written from the neighborhood sources. |
+| Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista, Victoria Park | `/las-olas-isles` etc. | Ready (November 9): copy written from cited public sources, now indexed and in the sitemap. Nick should read them. |
 | History | `/history` | New. `noindex`; **hold until archive permission is confirmed.** |
 | About | `/about` | New Selected Transactions, Client Reviews and Press sections (`/about#press`). |
 
@@ -21,14 +21,13 @@ Dashed boxes labeled "Draft" mark every spot that needs copy or a decision. Page
 ## Copy Nick needs to write or approve
 
 - **Waterfront:** done (November 2). Nick's "Final Page Copy" is used word for word, with his source links. Figures reviewed November 2, 2026; recheck them at least once a year.
-- **How to Choose:** his intro.
-- **Each neighborhood page:** Character, Pros, Cons. Confirm every "At a Glance" line (list below).
+- **Neighborhood pages and How to Choose:** written November 9 from the sources listed on each page (city surveys, civic and homeowners associations, 33 CFR 117.261). Nick should read them and change anything that doesn't match his experience.
 - **History:** introduction is in ("I’m a good realtor."). Any added text needs a cited source for dates, names or prices.
-- **About:** details for the Luna sale; issue name, date and link for each Lifestyle Magazine feature.
+- **About:** Luna's price, role and closing date (the card now describes the building only). Lifestyle Magazine issue dates (see Press below).
 
 ## Assets still missing
 
-- Photos for **Coral Ridge, Rio Vista and Victoria Park** (their banners are plain for now).
+- **Neighborhood photos:** Coral Ridge, Rio Vista and Victoria Park use U.S. Geological Survey aerial imagery (The National Map, public domain), framed on each neighborhood. Nick's drone shoots covered Hendricks Isle, Lucille Drive (Harbor Beach), Isle of Capri, downtown, the beach and Lauderdale Harbors (the "1701 12th Court" folder), but not these three. Replace them with drone photos if he shoots there.
 - **Newspaper clippings:** done (October 23). Four public-domain clippings from the Library of Congress's Chronicling America archive (1906–1907 coverage of Everglades drainage at Fort Lauderdale) are on `/history`. The three Drive files named `NN99.pdf`, `NNN1.pdf` and `NPLI.pdf` were the Lifestyle Magazine pages, not clippings.
 - **Instagram video:** no URL or file was found.
 - **Dropbox:** not connected to this session, so anything stored only there hasn't been reviewed.
@@ -36,15 +35,10 @@ Dashed boxes labeled "Draft" mark every spot that needs copy or a decision. Page
 
 ## Claims to verify before publishing
 
-- **Neighborhood "At a Glance" lines** (carried over from the earlier site):
-  - Las Olas Isles: Walk to Las Olas · Bascule bridges only · Narrow, deep lots
-  - Harbor Beach: No bridges to the inlet · Gated and guarded · Estate-size lots
-  - Coral Ridge: "Established streets from Sunrise to Oakland Park Boulevard" · Dockage varies by canal · Generous lots · Shops on Federal Highway
-  - Rio Vista: "Between the New River and the Intracoastal" · Three waterways · Minutes from downtown · Compact to estate lots
-  - Victoria Park: "Walkable streets just northeast of downtown" · Walk to Las Olas · Mostly dry lots · Townhome infill
+- **Neighborhood "At a Glance" lines** were rewritten November 9 to match the sources. The earlier site's "No bridges to the inlet" for Harbor Beach was wrong: its isles open onto the Intracoastal just north of the 17th Street drawbridge, so boats pass one drawbridge. "Estate-size lots", "Generous lots", "Three waterways" and "Mostly dry lots" were dropped because no source supported them.
 - **Waterfront figures** are Nick's, reviewed November 2, 2026, with sources listed on the page.
 - **History captions** are the archive's own titles, dates and catalog numbers, credited to History Fort Lauderdale. "Cole Hammock" is the archive's spelling (the neighborhood is Colee Hammock). One Rio Vista image (`rio-vista-1928.jpg`) has no catalog number on the contact sheet.
-- **Lifestyle Magazine:** confirm the exact publication name, issue and date.
+- **Lifestyle Magazine:** the publisher is Lifestyle Media Group (lmgfl.com), and the page credits it. Its site doesn't post these profiles, so issue dates aren't shown. The proof PDFs Nick shared are dated October 15, 2025 (first Leaders in Real Estate profile), March 13, 2026 (second) and September 17, 2026 (Men of Influence, which Lifestyle runs in October issues). Nick can confirm the issues.
 - **Featured Transactions** (from Nick's Zillow profile, October 23, 2026): Coral Ridge, Fort Lauderdale (2898 NE 26th St), $7,250,000, 5 bed, 5.5 bath, 4,690 sq ft, represented the buyer, sold April 2026 (BEX Realty shows April 10, 2026); Solemar, Pompano Beach (1116 N Ocean Blvd #1801), $3,375,000, 3 bed, 3.5 bath, 2,428 sq ft, represented the seller, sold August 3, 2026. Zillow counts half baths as full (6 and 4); the cards use the listing counts. The site shows the neighborhood or building, not the street address. Luna is still a draft. Nick should confirm each line and that the brokerage and clients are fine with it.
 - **Client reviews** are copied word for word from Zillow (NoahSimon4, June 2022; brittanyj 399, February 2022; Anna Koontz, February 2022), with a link to the profile. Zillow's terms limit reusing its content, so Nick may prefer Zillow's own review badge or the reviewers' permission. One review says he is "relatively new to the real estate game"; it is kept verbatim.
 - **"Esq." on a real estate site:** Nick wrote the legal notice. The short version is in every page's footer, and the full version is at `/legal` (linked from the footer, `noindex`).

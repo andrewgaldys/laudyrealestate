@@ -1638,6 +1638,115 @@ html:has(.screens) {
   color: var(--sea);
 }
 
+.procon ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.procon li {
+  margin-bottom: 0.75em;
+}
+
+.procon li::marker {
+  color: var(--sea);
+}
+
+/* How to Choose: one row per neighborhood. */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.compare th,
+.compare td {
+  padding: 1rem 1.25rem 1rem 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare thead th {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--sea);
+}
+
+.compare tbody th {
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.compare a {
+  text-decoration: none;
+}
+
+.compare-wrap {
+  overflow-x: auto;
+}
+
+/* Phones: each row becomes a short stacked card. */
+@media (max-width: 700px) {
+  .compare thead {
+    display: none;
+  }
+
+  .compare,
+  .compare tbody,
+  .compare tr,
+  .compare th,
+  .compare td {
+    display: block;
+  }
+
+  .compare tr {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .compare th,
+  .compare td {
+    padding: 0;
+    border: 0;
+  }
+
+  .compare tbody th {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .compare td + td {
+    margin-top: 0.35rem;
+  }
+
+  .compare td::before {
+    content: attr(data-label) ": ";
+    color: var(--text-faint);
+  }
+}
+
+.compare-wrap + .reading {
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+}
+
+.reading ul:not([class]) {
+  padding-left: 1.2em;
+}
+
+.reading ul:not([class]) li {
+  margin-bottom: 0.9em;
+}
+
+.reading strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
 .related {
   display: flex;
   flex-wrap: wrap;
@@ -1811,6 +1920,12 @@ html:has(.screens) {
   margin-top: 0.5rem;
   font-size: 0.72rem;
   color: var(--text-faint);
+}
+
+.deal__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .deal__price {

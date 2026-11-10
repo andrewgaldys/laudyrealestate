@@ -57,6 +57,7 @@ Replace any photo by saving a new one **with the same file name** into `images/`
 | `home-market.jpg`, `home-waterfront.jpg`, `home-nick.jpg`, `home-nick-tall.jpg` | Home cards 2–4; Explore banner |
 | `video/las-olas-isles.mp4`, `images/las-olas-isles-poster.jpg` | Las Olas Isles banner (Hendricks Isle, Jul 1 drone footage) |
 | `las-olas-isles-aerial.jpg`, `harbor-beach-aerial.jpg` | Neighborhood tiles; Harbor Beach banner |
+| `coral-ridge-aerial.jpg`, `rio-vista-aerial.jpg`, `victoria-park-aerial.jpg` | Neighborhood tiles and banners (USGS aerial imagery, public domain) |
 | `nick-napoli-hero.jpg`, `nick-napoli-hero-tall.jpg`, `about-portrait-tall.jpg` | About hero and the vertical portrait beside the legal paragraph |
 | `about-city.jpg`, `about-site.jpg`, `about-development.jpg` | About |
 | `waterfront-setbacks.jpg` | Waterfront (Setbacks); same Hendricks Isle photo as `about-development.jpg`, full width |
