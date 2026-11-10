@@ -11,7 +11,7 @@ For Nick and Andrew. These notes live in the repository but are **not published*
 | Waterfront | `/waterfront` | Ready. Nick's final copy and sources are in (November 2, 2026). |
 | Neighborhoods: How to Choose | `/neighborhoods` | Ready (November 9): intro, comparison table and questions, written from the neighborhood sources. |
 | Las Olas Isles, Harbor Beach, Coral Ridge, Rio Vista, Victoria Park | `/las-olas-isles` etc. | Ready (November 9): copy written from cited public sources, now indexed and in the sitemap. Nick should read them. |
-| History | `/history` | New. `noindex`; **hold until archive permission is confirmed.** |
+| History | `/history` | Indexed and in the sitemap (November 10): Andrew confirmed the archive photos can be used. |
 | About | `/about` | New Selected Transactions, Client Reviews and Press sections (`/about#press`). |
 
 Dashed boxes labeled "Draft" mark every spot that needs copy or a decision. Pages that are mostly drafts carry `<meta name="robots" content="noindex, follow">` and are left out of `sitemap.xml`.
@@ -60,7 +60,7 @@ At 1600 px and wider, each side of the name has three equal-width slots, so the 
 
 ## Permissions
 
-- **History Fort Lauderdale photos** (`images/history/`): the files come from the archive's contact sheets. Before `/history` goes live, confirm reproduction permission, any fee and the exact credit line. If permission isn't granted, delete `images/history/` and the History page (and its links in the header, footer and Explore page).
+- **History Fort Lauderdale photos** (`images/history/`): the files come from the archive's contact sheets. Andrew confirmed on November 10 that they can be used. The credit line on the page reads "Photographs courtesy of History Fort Lauderdale".
 - **Lifestyle Magazine pages** (`images/press-lifestyle-1..3.jpg`): confirm the publisher is fine with reposting the page images. Otherwise link to its online edition instead.
 - **Portraits:** the About and Home portraits are from the `rDF9_` shoot Nick shared. Confirm the photographer's license covers website use. The vertical magazine photo of Nick in the chair was **not** used because its rights are unclear.
 - **Drone and listing photos:** assumed to be Nick's own or licensed for his marketing.
@@ -84,3 +84,19 @@ At 1600 px and wider, each side of the name has three equal-width slots, so the 
 ## Discovery
 
 Each page has a descriptive title, a single H1, internal links and crawlable text, and `robots.txt` allows search and AI crawlers. None of this guarantees placement in Google, ChatGPT or any other search or answer engine. Original, reviewed content and real reputation signals matter more than page count.
+
+## History page additions (November 10, 2026)
+
+- Added 37 photos from two History Fort Lauderdale contact sheets ("Las Olas and the New River" and "New River"), in three places:
+  - a new **The New River** section (24 photos);
+  - a new **Las Olas Boulevard** section (12 photos);
+  - one more aerial in **Rio Vista** (5-32519).
+- "New River to Beach" moved from the Rio Vista section to The New River, and the Rio Vista section is now just "Rio Vista". The `/history#rio-vista` link still works.
+- Captions are the archive's titles, dates and catalog numbers from the contact sheets. Changes from the sheets:
+  - Typo fixed: "Aerial News River" now reads "Aerial New River".
+  - Each title written in two different ways on the sheets uses the fuller version.
+  - Four photos were on both sheets as different scans; the sharper scan is used.
+- **No catalog number:** "Aerial looking east with river forks c.1940" (credited to History Fort Lauderdale with no number).
+- **Source unknown:** the labeled aerial of the North and South Forks (yellow outlines naming Riverside, Sailboat Bend and the Tarpon River neighborhood). Andrew sent it separately with no date or catalog number, so it shows no credit. Confirm it's from History Fort Lauderdale too.
+- **Permission:** Andrew confirmed on November 10 that the photos can be used, including the labeled aerial. `/history` is now indexed and in the sitemap.
+

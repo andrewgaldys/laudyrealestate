@@ -19,6 +19,7 @@ style.css             All styles
 video/                Home loop (1080p and 720p) and the Las Olas Isles banner
 images/               Photos; images/history/ holds the archive photographs
 robots.txt            Allows search engines and AI crawlers
+llms.txt              Plain-text summary of Nick and the guides for AI assistants. Update it when facts change.
 sitemap.xml           Published, indexable pages only
 CNAME                 Custom domain for GitHub Pages. Keep this file.
 fe3a30e6…274c.txt     IndexNow key (tells Bing about page updates). Keep this file.
@@ -63,7 +64,7 @@ Replace any photo by saving a new one **with the same file name** into `images/`
 | `waterfront-setbacks.jpg` | Waterfront (Setbacks); same Hendricks Isle photo as `about-development.jpg`, full width |
 | `featured-coral-ridge.jpg`, `featured-solemar.jpg`, `featured-luna.jpg` | About, Featured Transactions; Coral Ridge also on the Explore tile |
 | `press-lifestyle-1..3.jpg` | About, Press (Lifestyle Magazine pages) |
-| `history/*.jpg` | History (History Fort Lauderdale archive; permission pending) |
+| `history/*.jpg` | History: New River, Las Olas Boulevard, Beach and Rio Vista sections (History Fort Lauderdale archive; permission pending) |
 | `waterfront-*.jpg`, `neighborhoods-hero-drone.jpg`, `contact-dusk.jpg`, `og-image.jpg` | Waterfront, Neighborhoods, contact sections, link previews |
 
 ## Content rules

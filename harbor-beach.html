@@ -10,7 +10,7 @@
   <meta name="author" content="Nicholas Napoli">
   <meta name="theme-color" content="#03070e">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Nicholas Napoli, Esq. | Fort Lauderdale Real Estate">
   <meta property="og:title" content="Harbor Beach Neighborhood Guide, Fort Lauderdale | Nicholas Napoli, Esq.">
   <meta property="og:description" content="Harbor Beach, Fort Lauderdale: a gated waterfront neighborhood between the Intracoastal and the ocean, developed from 1942, with one drawbridge to Port Everglades. History, pros, cons and sources.">
@@ -31,29 +31,387 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://laudyrealestate.com/harbor-beach#webpage",
-        "url": "https://laudyrealestate.com/harbor-beach",
-        "name": "Harbor Beach Neighborhood Guide",
+        "@type": "Article",
+        "@id": "https://laudyrealestate.com/harbor-beach#article",
+        "headline": "Harbor Beach Neighborhood Guide, Fort Lauderdale",
         "description": "Harbor Beach, Fort Lauderdale: a gated waterfront neighborhood between the Intracoastal and the ocean, developed from 1942, with one drawbridge to Port Everglades. History, pros, cons and sources.",
-        "isPartOf": { "@id": "https://laudyrealestate.com/#website" },
-        "author": { "@id": "https://laudyrealestate.com/#person" },
+        "image": "https://laudyrealestate.com/images/harbor-beach-aerial.jpg",
+        "datePublished": "2026-11-09",
+        "dateModified": "2026-11-09",
         "inLanguage": "en-US",
-        "dateModified": "2026-11-09"
+        "mainEntityOfPage": "https://laudyrealestate.com/harbor-beach",
+        "isPartOf": {
+          "@id": "https://laudyrealestate.com/#website"
+        },
+        "author": {
+          "@id": "https://laudyrealestate.com/#person"
+        },
+        "publisher": {
+          "@id": "https://laudyrealestate.com/#person"
+        },
+        "about": {
+          "@id": "https://laudyrealestate.com/harbor-beach#place"
+        },
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Jane Feehan, “Fort Lauderdale’s Harbor Beach: exclusive then and now” (2022)",
+            "url": "https://janeshistorynook.blogspot.com/2022/09/fort-lauderdales-harbor-beach-exclusive.html"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Harbor Beach Association, security",
+            "url": "https://www.harborbeach.org/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Harbor Beach Surf Club",
+            "url": "https://harborbeachsurfclub.com/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "33 CFR 117.261, drawbridges on the Intracoastal Waterway",
+            "url": "https://www.ecfr.gov/current/title-33/chapter-I/subchapter-J/part-117/subpart-B/section-117.261"
+          }
+        ]
+      },
+      {
+        "@type": "Place",
+        "@id": "https://laudyrealestate.com/harbor-beach#place",
+        "name": "Harbor Beach",
+        "description": "Neighborhood in Fort Lauderdale, Florida",
+        "url": "https://laudyrealestate.com/harbor-beach",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 26.1059,
+          "longitude": -80.1155
+        },
+        "containedInPlace": {
+          "@id": "https://laudyrealestate.com/#fort-lauderdale"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://laudyrealestate.com/#website",
+        "url": "https://laudyrealestate.com/",
+        "name": "Laudy Real Estate",
+        "alternateName": "Nicholas Napoli, Esq. | Fort Lauderdale Real Estate",
+        "description": "Fort Lauderdale and South Florida waterfront real estate guides from Realtor Nicholas Napoli, Esq.",
+        "inLanguage": "en-US",
+        "about": {
+          "@id": "https://laudyrealestate.com/#agent"
+        },
+        "publisher": {
+          "@id": "https://laudyrealestate.com/#person"
+        }
       },
       {
         "@type": "Person",
         "@id": "https://laudyrealestate.com/#person",
         "name": "Nicholas Napoli",
         "honorificSuffix": "Esq.",
-        "url": "https://laudyrealestate.com/about"
+        "alternateName": [
+          "Nick Napoli",
+          "Nicholas Napoli, Esq."
+        ],
+        "jobTitle": "Realtor",
+        "description": "Fort Lauderdale Realtor with Fidelity Real Estate LLC for waterfront, residential and commercial real estate in Fort Lauderdale and Broward County, South Florida. Also a residential waterfront developer and a practicing attorney, member of The Florida Bar.",
+        "url": "https://laudyrealestate.com/about",
+        "mainEntityOfPage": "https://laudyrealestate.com/about",
+        "image": "https://laudyrealestate.com/images/nick-napoli-portrait.jpg",
+        "email": "mailto:nicknapolire@gmail.com",
+        "telephone": "+1-954-815-8278",
+        "worksFor": {
+          "@id": "https://laudyrealestate.com/#brokerage"
+        },
+        "workLocation": {
+          "@id": "https://laudyrealestate.com/#fort-lauderdale"
+        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Realtor (real estate sales)",
+            "occupationLocation": {
+              "@id": "https://laudyrealestate.com/#fort-lauderdale"
+            }
+          },
+          {
+            "@type": "Occupation",
+            "name": "Residential waterfront developer"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Attorney"
+          }
+        ],
+        "memberOf": [
+          {
+            "@type": "Organization",
+            "name": "The Florida Bar",
+            "url": "https://www.floridabar.org/"
+          },
+          {
+            "@type": "Organization",
+            "name": "National Association of REALTORS®",
+            "url": "https://www.nar.realtor/"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Florida real estate license",
+            "recognizedBy": {
+              "@type": "GovernmentOrganization",
+              "name": "Florida Real Estate Commission"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Bar admission",
+            "name": "Member of The Florida Bar",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "The Florida Bar"
+            }
+          }
+        ],
+        "knowsAbout": [
+          "Fort Lauderdale waterfront homes",
+          "South Florida waterfront real estate",
+          "Intracoastal Waterway homes",
+          "Canal-front homes and boating access",
+          "Water depth, canal width and bridge clearance",
+          "Seawalls and docks",
+          "Waterfront setbacks and permits",
+          "Fort Lauderdale residential real estate",
+          "Fort Lauderdale commercial real estate",
+          "Pompano Beach oceanfront condominiums",
+          "Downtown Fort Lauderdale",
+          "Las Olas Isles",
+          "Harbor Beach",
+          "Coral Ridge",
+          "Rio Vista",
+          "Victoria Park",
+          "Residential waterfront development",
+          "Real estate contracts"
+        ],
+        "subjectOf": [
+          {
+            "@type": "CreativeWork",
+            "name": "Men of Influence",
+            "description": "Lifestyle magazine's annual recognition of South Florida leaders.",
+            "isPartOf": {
+              "@type": "Periodical",
+              "name": "Lifestyle Magazine"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Lifestyle Media Group",
+              "url": "https://lmgfl.com/"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Leaders in Real Estate, Home & Design",
+            "description": "Lifestyle magazine profile series.",
+            "isPartOf": {
+              "@type": "Periodical",
+              "name": "Lifestyle Magazine"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Lifestyle Media Group",
+              "url": "https://lmgfl.com/"
+            }
+          }
+        ],
+        "sameAs": [
+          "https://www.zillow.com/profile/nicknapolire",
+          "https://traded.co/agent/nick-napoli/"
+        ]
+      },
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://laudyrealestate.com/#agent",
+        "name": "Nicholas Napoli, Esq.",
+        "alternateName": [
+          "Nick Napoli, Realtor",
+          "Nicholas Napoli, Esq. | Fidelity Real Estate LLC"
+        ],
+        "description": "Fort Lauderdale Realtor for waterfront, residential and commercial real estate in Broward County, South Florida: buyer and seller representation for canal-front, Intracoastal and oceanfront homes and condominiums.",
+        "url": "https://laudyrealestate.com/",
+        "image": [
+          "https://laudyrealestate.com/images/nick-napoli-portrait.jpg",
+          "https://laudyrealestate.com/images/og-image.jpg"
+        ],
+        "telephone": "+1-954-815-8278",
+        "email": "nicknapolire@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fort Lauderdale",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 26.1223,
+          "longitude": -80.1434
+        },
+        "areaServed": [
+          {
+            "@id": "https://laudyrealestate.com/#fort-lauderdale"
+          },
+          {
+            "@type": "City",
+            "name": "Pompano Beach",
+            "sameAs": "https://en.wikipedia.org/wiki/Pompano_Beach,_Florida"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Broward County",
+            "sameAs": "https://en.wikipedia.org/wiki/Broward_County,_Florida"
+          },
+          {
+            "@type": "Place",
+            "name": "South Florida",
+            "sameAs": "https://en.wikipedia.org/wiki/South_Florida"
+          },
+          {
+            "@id": "https://laudyrealestate.com/las-olas-isles#place"
+          },
+          {
+            "@id": "https://laudyrealestate.com/harbor-beach#place"
+          },
+          {
+            "@id": "https://laudyrealestate.com/coral-ridge#place"
+          },
+          {
+            "@id": "https://laudyrealestate.com/rio-vista#place"
+          },
+          {
+            "@id": "https://laudyrealestate.com/victoria-park#place"
+          }
+        ],
+        "knowsAbout": [
+          "Fort Lauderdale waterfront homes",
+          "South Florida waterfront real estate",
+          "Intracoastal Waterway homes",
+          "Canal-front homes and boating access",
+          "Water depth, canal width and bridge clearance",
+          "Seawalls and docks",
+          "Waterfront setbacks and permits",
+          "Fort Lauderdale residential real estate",
+          "Fort Lauderdale commercial real estate",
+          "Pompano Beach oceanfront condominiums",
+          "Downtown Fort Lauderdale",
+          "Las Olas Isles",
+          "Harbor Beach",
+          "Coral Ridge",
+          "Rio Vista",
+          "Victoria Park",
+          "Residential waterfront development",
+          "Real estate contracts"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Waterfront home buyer representation",
+              "serviceType": "Real estate brokerage"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Waterfront home listing and sale",
+              "serviceType": "Real estate brokerage"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential buyer and seller representation",
+              "serviceType": "Real estate brokerage"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Condominium sales",
+              "serviceType": "Real estate brokerage"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial real estate",
+              "serviceType": "Real estate brokerage"
+            }
+          }
+        ],
+        "employee": {
+          "@id": "https://laudyrealestate.com/#person"
+        },
+        "parentOrganization": {
+          "@id": "https://laudyrealestate.com/#brokerage"
+        },
+        "sameAs": [
+          "https://www.zillow.com/profile/nicknapolire",
+          "https://traded.co/agent/nick-napoli/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://laudyrealestate.com/#brokerage",
+        "name": "Fidelity Real Estate LLC"
+      },
+      {
+        "@type": "City",
+        "@id": "https://laudyrealestate.com/#fort-lauderdale",
+        "name": "Fort Lauderdale",
+        "sameAs": "https://en.wikipedia.org/wiki/Fort_Lauderdale,_Florida",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 26.1223,
+          "longitude": -80.1434
+        },
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Broward County",
+          "sameAs": "https://en.wikipedia.org/wiki/Broward_County,_Florida",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Florida"
+          }
+        }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://laudyrealestate.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Neighborhoods", "item": "https://laudyrealestate.com/neighborhoods" },
-          { "@type": "ListItem", "position": 3, "name": "Harbor Beach", "item": "https://laudyrealestate.com/harbor-beach" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://laudyrealestate.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Neighborhoods",
+            "item": "https://laudyrealestate.com/neighborhoods"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Harbor Beach",
+            "item": "https://laudyrealestate.com/harbor-beach"
+          }
         ]
       }
     ]
@@ -154,7 +512,7 @@
       <div class="footer-grid">
         <div>
           <p class="footer-wordmark">Nicholas Napoli, Esq.</p>
-          <p>Realtor, Fidelity Real Estate LLC<br>Fort Lauderdale, Florida</p>
+          <p>Realtor, Fidelity Real Estate LLC<br>Waterfront and residential real estate<br>Fort Lauderdale and South Florida</p>
         </div>
         <nav aria-label="Footer">
           <h2 class="footer-heading">Explore</h2>

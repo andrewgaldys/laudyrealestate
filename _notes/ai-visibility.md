@@ -63,3 +63,24 @@ Ask ChatGPT, Gemini, Claude and Perplexity the same five questions on the first 
 The cited sources show where to get listed next. Expect months, not weeks.
 
 November 9: the five neighborhood guides and How to Choose are now indexed and in the sitemap, each with cited sources.
+
+## November 10: search setup behind the pages (not yet live)
+
+- Every indexable page now carries the same full profile in its structured data. It covers:
+  - Nick as Realtor, developer and attorney, with The Florida Bar and the National Association of REALTORS® as memberships.
+  - His service area: Fort Lauderdale, Pompano Beach, Broward County and South Florida, plus the five neighborhoods.
+  - His services and subjects, with waterfront first, and the Lifestyle profiles.
+- The guides are marked as articles by Nick, with each neighborhood's location and the cited sources.
+- "South Florida" was added to:
+  - The home page title and description.
+  - The Waterfront description.
+  - The footer tagline, which now reads "Waterfront and residential real estate, Fort Lauderdale and South Florida".
+- The home page description no longer says "superior market knowledge". Florida Bar rules restrict comparative claims.
+- New `llms.txt`: a plain summary of Nick and the guides for AI assistants. It's a new convention and not every assistant reads it, but it costs nothing.
+- Not added on purpose: review stars in structured data. Google doesn't allow marking up reviews copied from Zillow, and it can penalize it.
+
+Still open:
+- A web search on November 10 found neither laudyrealestate.com nor a Realtor profile for Nick. Search Console and Bing setup comes first.
+- An Avvo listing for "Nicholas Vivinetto Napoli" (Fort Lauderdale, admitted 2026) is probably Nick. Once he confirms, add his Avvo and Florida Bar profile links to `sameAs` on every page. They are strong proof of the "attorney" claim.
+- The home page has fewer than 100 words of visible text, so the guides and About do most of the work for AI answers.
+
